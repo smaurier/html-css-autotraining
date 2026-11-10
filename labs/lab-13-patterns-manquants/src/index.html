@@ -1,0 +1,36 @@
+<!doctype html>
+<!-- STARTER. Des onglets et un interrupteur faits avec des div et des classes.
+     À la souris, impeccable. Au clavier et à l'oreille, inexistants. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Onglets et interrupteur | TribuZen</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="contenu">
+      <h1>Fiche de membre</h1>
+
+      <div class="onglets" id="onglets">
+        <div class="barre">
+          <div class="onglet actif" data-cible="panneau-profil">Profil</div>
+          <div class="onglet" data-cible="panneau-activite">Activité</div>
+          <div class="onglet" data-cible="panneau-reglages">Réglages</div>
+        </div>
+
+        <div class="panneau" id="panneau-profil">Alondra, inscrite en mars 2026.</div>
+        <div class="panneau cache" id="panneau-activite">Douze ateliers suivis.</div>
+        <div class="panneau cache" id="panneau-reglages">
+          <p>Préférences de notification.</p>
+          <div class="interrupteur" id="interrupteur">
+            <span class="piste"><span class="pouce"></span></span>
+            <span class="libelle" id="libelle-interrupteur">Activer</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<!-- STARTER. La palette est jolie. Elle est aussi non conforme sur quatre points. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>État des ateliers | TribuZen</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="contenu">
+      <h1>État des ateliers</h1>
+
+      <p class="secondaire" id="secondaire">Dernière mise à jour il y a deux minutes.</p>
+
+      <ul class="liste">
+        <li class="ligne">
+          <span class="pastille pastille-ok" id="pastille-ok"></span>
+          <span class="nom" id="nom-ok">Cuisine</span>
+        </li>
+        <li class="ligne">
+          <span class="pastille pastille-ko" id="pastille-ko"></span>
+          <span class="nom">Jardinage</span>
+        </li>
+      </ul>
+
+      <p class="avertissement" id="avertissement">Deux ateliers nécessitent votre attention.</p>
+
+      <form class="formulaire">
+        <label for="recherche">Chercher un atelier</label>
+        <input id="recherche" name="recherche" type="search" />
+        <button type="submit" class="bouton" id="bouton">Chercher</button>
+      </form>
+    </main>
+  </body>
+</html>

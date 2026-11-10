@@ -1,0 +1,20 @@
+/* STARTER. Cette feuille « marche » à force de surenchère.
+   Tu la réécris, sans toucher au HTML. */
+
+* { box-sizing: border-box; }
+body { font-family: system-ui, sans-serif; margin: 0; }
+.contenu { padding: 1rem; max-inline-size: 45rem; }
+
+button { font: inherit; padding: 0.5rem 0.9rem; border: 1px solid #888; border-radius: 0.4rem; }
+
+.bouton-primaire { background: rgb(11, 95, 255); color: white; border-color: rgb(11, 95, 255); }
+
+/* Le coupable : un sélecteur très spécifique, plus un !important par-dessus. */
+#app .carte .actions button { background: rgb(220, 220, 220) !important; color: black !important; }
+
+/* Et donc l'utilitaire ne peut plus rien, sauf un !important de plus. */
+.cache { display: none; }
+
+.carte { border: 1px solid #c8c8c8; border-radius: 0.6rem; padding: 1rem; margin-block: 1rem; }
+.actions { display: flex; gap: 0.5rem; }
+:focus-visible { outline: 2px solid rgb(11, 95, 255); outline-offset: 2px; }

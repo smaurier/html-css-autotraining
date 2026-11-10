@@ -1,0 +1,31 @@
+/* STARTER. Deux défauts.
+   1. Les boutons des trois cartes ne sont pas alignés entre eux : chaque carte a sa
+      grille interne, indépendante de celle des voisines.
+   2. Un mot long fait déborder la grille. */
+
+body { font-family: system-ui, sans-serif; margin: 0; }
+.contenu { padding: 1rem; max-inline-size: 60rem; }
+
+.cartes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.carte {
+  display: grid;
+  gap: 0.5rem;
+  border: 1px solid #c8c8c8;
+  border-radius: 0.6rem;
+  padding: 1rem;
+}
+
+.carte-titre { margin: 0; font-size: 1.1rem; }
+.carte-texte { margin: 0; }
+.carte-action { margin: 0; }
+
+button { font: inherit; padding: 0.4rem 0.7rem; }
+:focus-visible { outline: 2px solid rgb(11, 95, 255); outline-offset: 2px; }

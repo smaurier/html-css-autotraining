@@ -1,0 +1,58 @@
+/* SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN.
+
+   Ce lab se résout SANS UNE SEULE media query, et c'est le point : le composant répond à
+   la place qu'on lui donne, la page se replie par son dimensionnement. */
+
+body { font-family: system-ui, sans-serif; margin: 0; }
+.contenu { padding: 1rem; max-inline-size: 70rem; }
+
+.page {
+  display: grid;
+  /* minmax(0, …) sur les deux pistes : elles peuvent rétrécir sous leur contenu, donc la
+     page ne déborde jamais, même à 320 px. Module 06 § 1.1. */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 14rem);
+  gap: 1rem;
+}
+
+.lateral {
+  border-inline-start: 1px solid #c8c8c8;
+  padding-inline-start: 1rem;
+}
+
+.carte {
+  border: 1px solid #c8c8c8;
+  border-radius: 0.6rem;
+  padding: 1rem;
+
+  /* La promesse faite au navigateur : « ma largeur ne dépend pas de mes descendants ».
+     Sans elle, la requête serait un cycle de calcul. Module 08 § 1. */
+  container-type: inline-size;
+  container-name: carte;
+}
+
+.carte h2 {
+  margin: 0 0 0.25rem;
+  /* Proportionnel au COMPOSANT et non à l'écran : 1cqi vaut 1 % de l'inline-size du
+     conteneur de requête. C'est ce qui rend le titre plus petit dans la barre latérale. */
+  font-size: clamp(0.95rem, 5cqi, 1.3rem);
+}
+
+.carte p { margin: 0; }
+.carte-media { inline-size: 4rem; block-size: 4rem; }
+
+/* Par défaut, empilé. C'est l'état le plus étroit, donc le point de départ. */
+.carte-corps { display: grid; gap: 0.75rem; }
+
+/* La requête s'applique aux DESCENDANTS du conteneur, jamais au conteneur lui-même.
+   Module 08 § 6, piège 4. */
+@container carte (inline-size > 20rem) {
+  .carte-corps {
+    grid-template-columns: 4rem 1fr;
+    align-items: center;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid rgb(11, 95, 255);
+  outline-offset: 2px;
+}

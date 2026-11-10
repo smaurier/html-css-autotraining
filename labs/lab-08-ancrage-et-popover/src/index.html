@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- STARTER. Un menu et une confirmation, faits « à la main ».
+     À la souris, tout marche. Au clavier, rien ne marche. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Menu et confirmation | TribuZen</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="entete">
+      <button type="button" id="declencheur-menu" class="bouton">Mon compte</button>
+
+      <div id="menu" class="menu">
+        <a href="/profil">Profil</a>
+        <a href="/preferences">Préférences</a>
+        <a href="/deconnexion">Déconnexion</a>
+      </div>
+    </header>
+
+    <main class="contenu">
+      <h1>Membres</h1>
+      <p>
+        <button type="button" id="declencheur-suppression" class="bouton bouton-danger">
+          Supprimer ce membre
+        </button>
+      </p>
+
+      <div id="confirmation" class="fausse-modale">
+        <h2 id="titre-confirmation">Supprimer ce membre ?</h2>
+        <p>Cette action est définitive.</p>
+        <div class="actions">
+          <button type="button" id="annuler" class="bouton">Annuler</button>
+          <button type="button" id="confirmer" class="bouton bouton-danger">Supprimer</button>
+        </div>
+      </div>
+
+      <p><a href="/apres">Un lien après la modale, pour tester le piège de focus</a></p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

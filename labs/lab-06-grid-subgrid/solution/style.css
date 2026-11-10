@@ -1,0 +1,46 @@
+/* SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN. */
+
+body { font-family: system-ui, sans-serif; margin: 0; }
+.contenu { padding: 1rem; max-inline-size: 60rem; }
+
+.cartes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+
+  /* minmax(0, 1fr) et non 1fr : « 1fr » vaut minmax(auto, 1fr), donc la piste refuse
+     de descendre sous la largeur de son contenu. Module 06 § 1.1. */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  /* Trois lignes partagées par toutes les cartes : titre, texte, action. */
+  grid-template-rows: auto 1fr auto;
+  gap: 1rem;
+}
+
+.carte {
+  /* La carte occupe les trois lignes de la grille parente... */
+  grid-row: span 3;
+  display: grid;
+  /* ...et ses lignes SONT celles du parent. C'est ce qui aligne les boutons entre
+     cartes. Module 06 § 3. */
+  grid-template-rows: subgrid;
+  gap: 0.5rem;
+  border: 1px solid #c8c8c8;
+  border-radius: 0.6rem;
+  padding: 1rem;
+}
+
+.carte-titre { margin: 0; font-size: 1.1rem; }
+/* Un mot plus long que la colonne doit pouvoir se couper plutôt que déborder. */
+.carte-texte { margin: 0; overflow-wrap: break-word; }
+.carte-action { margin: 0; align-self: end; }
+
+/* 10.11 (AA) : à l'étroit, la grille passe en une colonne. */
+@media (width < 48rem) {
+  .cartes { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; }
+  .carte { grid-row: auto; grid-template-rows: auto 1fr auto; }
+}
+
+button { font: inherit; padding: 0.4rem 0.7rem; }
+:focus-visible { outline: 2px solid rgb(11, 95, 255); outline-offset: 2px; }

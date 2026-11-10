@@ -1,0 +1,33 @@
+/* SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN.
+
+   L'ordre est déclaré UNE FOIS, et il décide de tout. La spécificité redevient un
+   détail local, et plus un budget à surenchérir. Module 02 § 1.1 et § 2. */
+
+@layer reset, base, composants, utilitaires;
+
+@layer reset {
+  /* :where() a une spécificité nulle : ce reset est surchargeable par un simple
+     sélecteur d'élément, donc il ne gêne personne. Module 02 § 3.1. */
+  :where(*) { box-sizing: border-box; }
+  :where(body) { font-family: system-ui, sans-serif; margin: 0; }
+}
+
+@layer base {
+  button { font: inherit; padding: 0.5rem 0.9rem; border: 1px solid #888; border-radius: 0.4rem; }
+  :focus-visible { outline: 2px solid rgb(11, 95, 255); outline-offset: 2px; }
+}
+
+@layer composants {
+  .contenu { padding: 1rem; max-inline-size: 45rem; }
+  .carte { border: 1px solid #c8c8c8; border-radius: 0.6rem; padding: 1rem; margin-block: 1rem; }
+  .actions { display: flex; gap: 0.5rem; }
+
+  /* Un seul sélecteur de classe suffit : il est dans une couche plus haute que `base`,
+     donc il gagne sans avoir besoin d'être spécifique. */
+  .bouton-primaire { background: rgb(11, 95, 255); color: rgb(255, 255, 255); border-color: rgb(11, 95, 255); }
+}
+
+@layer utilitaires {
+  /* Dernière couche déclarée, donc la plus forte. Plus besoin de !important. */
+  .cache { display: none; }
+}

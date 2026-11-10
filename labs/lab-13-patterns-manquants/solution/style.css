@@ -1,0 +1,52 @@
+/* SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN. */
+
+body { font-family: system-ui, sans-serif; margin: 0; }
+.contenu { padding: 1rem; max-inline-size: 45rem; }
+
+.barre { display: flex; gap: 0.25rem; border-block-end: 1px solid #c8c8c8; }
+
+/* Un bouton natif, remis à plat. appearance: none ne retire AUCUNE accessibilité :
+   le rôle, le focus et l'activation clavier restent. Module 16 § 1.1. */
+.onglet {
+  appearance: none;
+  font: inherit;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid transparent;
+  border-block-end: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* L'état vient de l'attribut ARIA, pas d'une classe parallèle : impossible de
+   désynchroniser l'écran et l'arbre d'accessibilité. */
+.onglet[aria-selected="true"] {
+  border-color: #c8c8c8;
+  background: #f4f4f4;
+  border-radius: 0.4rem 0.4rem 0 0;
+}
+
+.panneau { padding: 1rem 0; }
+
+.interrupteur {
+  appearance: none;
+  font: inherit;
+  border: none;
+  background: none;
+  color: inherit;
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+
+.piste { inline-size: 2.4rem; block-size: 1.3rem; border-radius: 1rem; background: #767676; display: inline-flex; align-items: center; padding: 2px; flex: none; }
+.pouce { inline-size: 1rem; block-size: 1rem; border-radius: 50%; background: #ffffff; transition: translate 150ms; }
+
+.interrupteur[aria-checked="true"] .piste { background: #1b5e20; }
+.interrupteur[aria-checked="true"] .pouce { translate: 1.1rem 0; }
+
+@media (prefers-reduced-motion: reduce) { .pouce { transition: none; } }
+
+:focus-visible { outline: 2px solid rgb(11, 95, 255); outline-offset: 2px; }

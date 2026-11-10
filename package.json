@@ -1,0 +1,23 @@
+{
+  "name": "html-css-course",
+  "version": "1.0.0",
+  "description": "HTML et CSS niveau master : mécanismes du moteur de rendu et de l'arbre d'accessibilité, accessibilité comme critère de réussite des labs, couverture des enquêtes State of vérifiée par outil",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview",
+    "audit": "node outils/couverture.mjs && node outils/criteres.mjs",
+    "audit:telecharger": "node outils/couverture.mjs --telecharger",
+    "test:outils": "node --test outils/test/couverture.test.mjs outils/test/criteres.test.mjs",
+    "labs:install": "npm --prefix labs install",
+    "lab:01": "npm --prefix labs run lab:01",
+    "solution:01": "npm --prefix labs run solution:01"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "vitepress": "1.6.4"
+  }
+}

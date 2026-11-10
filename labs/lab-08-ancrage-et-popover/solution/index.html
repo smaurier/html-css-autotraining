@@ -1,0 +1,63 @@
+<!doctype html>
+<!-- SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Menu et confirmation | TribuZen</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="entete">
+      <!-- popovertarget câble le bouton : bascule, top layer, fermeture au clic extérieur
+           et à Échap, sans une ligne de JavaScript. Module 09 § 3.
+           aria-expanded, en revanche, reste à notre charge : popover n'apporte AUCUNE
+           sémantique. Le script s'en occupe. -->
+      <button
+        type="button"
+        id="declencheur-menu"
+        class="bouton"
+        popovertarget="menu"
+        aria-expanded="false"
+        aria-controls="menu"
+      >
+        Mon compte
+      </button>
+
+      <div id="menu" class="menu" popover aria-label="Compte">
+        <a href="/profil">Profil</a>
+        <a href="/preferences">Préférences</a>
+        <a href="/deconnexion">Déconnexion</a>
+      </div>
+    </header>
+
+    <main class="contenu">
+      <h1>Membres</h1>
+      <p>
+        <button type="button" id="declencheur-suppression" class="bouton bouton-danger">
+          Supprimer ce membre
+        </button>
+      </p>
+
+      <!-- Un vrai <dialog> : top layer, ::backdrop, inertie du reste de la page,
+           confinement du focus et fermeture par Échap, tout fourni.
+           Le nom accessible, lui, est à écrire. Module 09 § 2.2. -->
+      <dialog id="confirmation" aria-labelledby="titre-confirmation">
+        <h2 id="titre-confirmation">Supprimer ce membre ?</h2>
+        <p>Cette action est définitive.</p>
+        <form method="dialog" class="actions">
+          <!-- autofocus sur l'action NON destructrice : sinon une validation par
+               inadvertance suffit à supprimer. -->
+          <button type="submit" value="annuler" id="annuler" class="bouton" autofocus>Annuler</button>
+          <button type="submit" value="confirmer" id="confirmer" class="bouton bouton-danger">
+            Supprimer
+          </button>
+        </form>
+      </dialog>
+
+      <p><a href="/apres">Un lien après la modale, pour tester le piège de focus</a></p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

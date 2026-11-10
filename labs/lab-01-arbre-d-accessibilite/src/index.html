@@ -1,0 +1,50 @@
+<!doctype html>
+<!-- STARTER. Tout ce qui est ici est volontairement mal structuré.
+     Le rendu à l'écran est presque correct : c'est l'arbre d'accessibilité qui est faux.
+     Tu réécris ce fichier. Le contenu textuel, lui, est le bon : ne le change pas. -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../commun.css" />
+  </head>
+  <body>
+    <div class="entete">
+      <div class="marque">
+        <img src="../../logo.svg" alt="logo" />
+        TribuZen
+      </div>
+
+      <div class="nav">
+        <a href="/membres" class="actif">Membres</a>
+        <a href="/ateliers">Ateliers</a>
+        <a href="/agenda">Agenda</a>
+        <a href="/profil" aria-hidden="true">Profil</a>
+        <a href="/recherche" class="icone"><img src="../../loupe.svg" alt="" /></a>
+      </div>
+    </div>
+
+    <div class="contenu">
+      <div class="titre">Membres</div>
+
+      <img src="../../separateur.svg" alt="separateur decoratif" />
+
+      <div class="sous-titre">Famille Maurier</div>
+      <p>Quatre personnes, dont deux mineures.</p>
+
+      <div class="sous-titre">Invitations en attente</div>
+      <p>Aucune invitation pour le moment.</p>
+
+      <div class="liens-aide">
+        <a href="/aide/membres">En savoir plus</a>
+        <a href="/aide/invitations">En savoir plus</a>
+      </div>
+    </div>
+
+    <div class="pied">
+      <a href="/mentions">Mentions légales</a>
+      <a href="/accessibilite">Déclaration d'accessibilité</a>
+    </div>
+  </body>
+</html>

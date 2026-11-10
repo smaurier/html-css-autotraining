@@ -1,0 +1,41 @@
+/* SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN. */
+
+body { font-family: system-ui, sans-serif; margin: 0; }
+.contenu { padding: 1rem; max-inline-size: 45rem; }
+
+.barre {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  border: 1px solid #c8c8c8;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+
+  /* 10.11 (AA) : à 320 px, la barre doit se replier plutôt que déborder. */
+  flex-wrap: wrap;
+
+  /* Plus d'overflow: hidden ici : le halo de focus des boutons doit pouvoir dépasser. */
+}
+
+.titre {
+  margin: 0;
+  font-weight: 600;
+  flex: 1;
+
+  /* LA ligne qui règle tout : un élément flex a min-width: auto, donc il refuse de
+     descendre sous min-content. Module 05 § 1.2. */
+  min-inline-size: 0;
+
+  /* La troncature est VISUELLE : le texte complet reste dans le DOM, donc disponible
+     pour les technologies d'assistance. */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Une marge automatique absorbe l'espace libre avant justify-content : c'est la façon
+   propre de pousser le dernier bouton, sans élément vide. Module 05 § 3.1. */
+.deconnexion { margin-inline-start: auto; }
+
+button { font: inherit; padding: 0.4rem 0.7rem; white-space: nowrap; }
+:focus-visible { outline: 2px solid rgb(11, 95, 255); outline-offset: 2px; }

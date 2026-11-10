@@ -1,0 +1,41 @@
+/* SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN.
+
+   Les deux propriétés sont ENREGISTREES. Le navigateur sait désormais ce qu'elles
+   contiennent, donc il peut les valider et les interpoler. Module 03 § 2. */
+
+@property --accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgb(11, 95, 255);
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+body { font-family: system-ui, sans-serif; margin: 0; }
+.contenu { padding: 1rem; max-inline-size: 45rem; }
+
+.carte {
+  border: 1px solid #c8c8c8;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  background: linear-gradient(var(--angle), #f4f4f4, #e2e2e2);
+  /* Interpolable UNIQUEMENT parce que --angle est enregistrée en <angle>. */
+  transition: --angle 600ms linear;
+}
+
+.carte.tourne { --angle: 180deg; }
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  background: var(--accent);
+  color: rgb(255, 255, 255);
+}
+
+button { font: inherit; padding: 0.5rem 0.9rem; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

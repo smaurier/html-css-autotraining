@@ -1,0 +1,21 @@
+/* STARTER. Le style est correct. C'est tout ce qui est correct. */
+
+body { font-family: system-ui, sans-serif; margin: 0; }
+.contenu { padding: 1rem; max-inline-size: 45rem; }
+
+.barre { display: flex; gap: 0.25rem; border-block-end: 1px solid #c8c8c8; }
+.onglet { padding: 0.5rem 0.9rem; cursor: pointer; border: 1px solid transparent; border-block-end: none; }
+.onglet.actif { border-color: #c8c8c8; background: #f4f4f4; border-radius: 0.4rem 0.4rem 0 0; }
+
+.panneau { padding: 1rem 0; }
+.cache { display: none; }
+
+.interrupteur { display: inline-flex; gap: 0.5rem; align-items: center; cursor: pointer; }
+.piste { inline-size: 2.4rem; block-size: 1.3rem; border-radius: 1rem; background: #c8c8c8; display: inline-flex; align-items: center; padding: 2px; }
+.pouce { inline-size: 1rem; block-size: 1rem; border-radius: 50%; background: white; transition: translate 150ms; }
+.interrupteur.actif .piste { background: #1b5e20; }
+.interrupteur.actif .pouce { translate: 1.1rem 0; }
+
+@media (prefers-reduced-motion: reduce) { .pouce { transition: none; } }
+
+:focus-visible { outline: 2px solid rgb(11, 95, 255); outline-offset: 2px; }

@@ -1,0 +1,54 @@
+/* SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN.
+
+   Plus un seul z-index : le top layer règle l'empilement. Module 09 § 1. */
+
+body { font-family: system-ui, sans-serif; margin: 0; }
+.entete { padding: 1rem; border-block-end: 1px solid #c8c8c8; }
+.contenu { padding: 1rem; max-inline-size: 45rem; }
+
+.bouton { font: inherit; padding: 0.5rem 0.9rem; border: 1px solid #888; border-radius: 0.4rem; background: Canvas; color: CanvasText; }
+.bouton-danger { border-color: #a11; color: #a11; }
+
+/* L'ancre est nommée, et le popover s'y accroche. Plus aucune mesure en JavaScript. */
+#declencheur-menu { anchor-name: --compte; }
+
+.menu[popover] {
+  /* Un popover est déjà dans le top layer : la position est relative à son ancre. */
+  position: absolute;
+  position-anchor: --compte;
+  position-area: block-end span-inline-end;
+  margin-block-start: 0.25rem;
+
+  /* Si ça ne tient pas, le navigateur essaie autre chose, dans l'ordre. C'était la
+     moitié du code d'une bibliothèque de positionnement. Module 09 § 5. */
+  position-try-fallbacks: flip-block, flip-inline;
+
+  inline-size: max-content;
+  background: Canvas;
+  color: CanvasText;
+  border: 1px solid #c8c8c8;
+  border-radius: 0.4rem;
+  padding: 0.5rem;
+}
+
+/* PIEGE : ne jamais poser `display` sur `[popover]` directement. La feuille du
+   navigateur met un popover ferme en `display: none` ; l'ecraser le rend visible en
+   permanence, et la fermeture legere ne se voit plus. On style l'etat OUVERT. */
+.menu:popover-open {
+  display: grid;
+  gap: 0.25rem;
+}
+
+dialog {
+  border: 1px solid #c8c8c8;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  max-inline-size: 28rem;
+}
+
+/* ::backdrop n'existe que pour les éléments du top layer. */
+dialog::backdrop { background: rgb(0 0 0 / 0.4); }
+
+.actions { display: flex; gap: 0.5rem; justify-content: flex-end; margin-block-start: 1rem; }
+
+:focus-visible { outline: 2px solid rgb(11, 95, 255); outline-offset: 2px; }

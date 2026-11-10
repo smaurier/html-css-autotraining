@@ -1,0 +1,27 @@
+<!doctype html>
+<!-- STARTER. Un composant qui s'affiche bien et qui n'existe pas dans l'arbre
+     d'accessibilité. Le libellé est censé venir du document : il ne traverse pas. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Web component | TribuZen</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="contenu">
+      <h1>Réglages</h1>
+
+      <!-- Le libellé est dans le document, le bouton sera dans le shadow DOM :
+           aria-labelledby ne traverse pas les frontières, et rien ne le signale. -->
+      <span id="etiquette-notifs">Notifications par courriel</span>
+      <bascule-notifs id="bascule" aria-labelledby="etiquette-notifs"></bascule-notifs>
+
+      <p>
+        <bascule-notifs id="bascule-2" libelle="Résumé hebdomadaire"></bascule-notifs>
+      </p>
+    </main>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

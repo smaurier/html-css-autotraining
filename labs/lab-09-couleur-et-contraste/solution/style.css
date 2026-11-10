@@ -1,0 +1,85 @@
+/* SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN.
+
+   Les couleurs sont déclarées en tokens, une fois en clair et une fois en sombre, et
+   TOUTES tiennent les seuils dans les deux thèmes. Module 10 § 4. */
+
+:root {
+  /* La ligne qu'on oublie : elle fait suivre les contrôles natifs, les barres de
+     défilement et le fond par défaut. Module 10 § 3. */
+  color-scheme: light dark;
+
+  --fond: #ffffff;
+  --texte: #1a1a1a;
+  /* 4,78:1 sur blanc : conforme pour du texte normal (seuil 4,5). */
+  --texte-secondaire: #6b6b6b;
+  /* 4,6:1 sur blanc. */
+  --avertissement: #7a5c00;
+  /* 3,4:1 sur blanc : seuil 3 pour un élément non textuel porteur d'information. */
+  --trait-champ: #949494;
+  --ok: #1b5e20;
+  --ko: #b3261e;
+  --accent: #0b5fff;
+  --sur-accent: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fond: #161616;
+    --texte: #ededed;
+    --texte-secondaire: #adadad;
+    --avertissement: #e9c46a;
+    --trait-champ: #8a8a8a;
+    --ok: #7bd389;
+    --ko: #ff9a93;
+    --accent: #8ab4ff;
+    --sur-accent: #10233f;
+  }
+}
+
+body { font-family: system-ui, sans-serif; margin: 0; background: var(--fond); color: var(--texte); }
+.contenu { padding: 1rem; max-inline-size: 45rem; }
+
+.secondaire { color: var(--texte-secondaire); }
+.avertissement { color: var(--avertissement); }
+
+.liste { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.ligne { display: flex; gap: 0.5rem; align-items: center; }
+
+.pastille { inline-size: 0.8rem; block-size: 0.8rem; border-radius: 50%; flex: none; }
+.pastille-ok { background: var(--ok); }
+.pastille-ko { background: var(--ko); }
+
+/* Le texte d'état porte l'information. Sa couleur n'est qu'un renfort. */
+.etat { font-size: 0.875rem; }
+.etat-ok { color: var(--ok); }
+.etat-ko { color: var(--ko); }
+
+.formulaire { margin-block-start: 1.5rem; display: grid; gap: 0.4rem; max-inline-size: 22rem; }
+
+/* 3.3 (AA) : la bordure d'un champ est un élément non textuel porteur d'information. */
+input {
+  font: inherit;
+  padding: 0.4rem;
+  border: 1px solid var(--trait-champ);
+  border-radius: 0.3rem;
+  background: var(--fond);
+  color: var(--texte);
+}
+
+.bouton {
+  font: inherit;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--accent);
+  border-radius: 0.4rem;
+  background: var(--accent);
+  color: var(--sur-accent);
+}
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+@media (forced-colors: active) {
+  /* Les couleurs système reprennent la main, et les pastilles disparaissent. Comme
+     l'information est portée par le texte, rien n'est perdu : c'est le test le plus
+     rapide de conformité à 3.1 (A). Module 08 § 3.2. */
+  .bouton { border-color: ButtonBorder; color: ButtonText; background: ButtonFace; }
+}

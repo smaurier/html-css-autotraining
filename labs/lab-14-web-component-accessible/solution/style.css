@@ -1,0 +1,9 @@
+/* SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN. */
+body { font-family: system-ui, sans-serif; margin: 0; }
+.contenu { padding: 1rem; max-inline-size: 45rem; }
+
+/* ::part est l'API de style publique du composant : ce qui n'est pas marqué `part`
+   n'est pas atteignable de l'extérieur. C'est un contrat. Module 18 § 3.2. */
+bascule-notifs::part(libelle) { font-weight: 500; }
+
+:focus-visible { outline: 2px solid rgb(11, 95, 255); outline-offset: 2px; }

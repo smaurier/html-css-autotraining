@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Contextes | TribuZen</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="contenu">
+      <h1>Trois bugs de contexte</h1>
+
+      <section class="carte" id="carte">
+        <span class="badge" id="badge">3</span>
+        <h2>Famille Maurier</h2>
+        <div class="panneau" id="panneau">Je dois passer au-dessus de la carte suivante.</div>
+      </section>
+
+      <section class="carte carte-suivante" id="suivante">
+        <h2>Famille Rodríguez</h2>
+      </section>
+
+      <div class="bloc" id="bloc">
+        <p class="interne">Ma marge doit rester dans le bloc.</p>
+      </div>
+
+      <div class="actions" id="actions">
+        <button type="button" id="annuler">Annuler</button>
+        <button type="button" id="valider" class="valider">Valider</button>
+      </div>
+    </main>
+  </body>
+</html>

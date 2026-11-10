@@ -1,0 +1,72 @@
+<!doctype html>
+<!-- SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inscription | TribuZen</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="contenu">
+      <h1>Inscription à l'atelier</h1>
+
+      <!-- Le résumé d'erreurs vit AVANT le formulaire : il reçoit le focus à la
+           soumission pour que la personne sache COMBIEN d'erreurs corriger. 7.5 (AA). -->
+      <div id="resume-erreurs" class="resume" role="alert" tabindex="-1" hidden></div>
+
+      <!-- 11.10 (A) : la signification du marqueur est expliquée AVANT le formulaire.
+           La lire après l'avoir rempli ne sert à rien. -->
+      <p class="mention">Les champs marqués d'une étoile sont obligatoires.</p>
+
+      <form id="formulaire" class="formulaire" novalidate>
+        <div class="champ">
+          <!-- 11.1 (A) : une étiquette visible, reliée par for. Un placeholder ne nomme
+               rien : il disparaît à la saisie et son contraste est faible. -->
+          <label for="courriel">Courriel <span aria-hidden="true">*</span></label>
+          <input
+            id="courriel"
+            name="courriel"
+            type="email"
+            required
+            autocomplete="email"
+            aria-describedby="aide-courriel"
+          />
+          <!-- 11.10 (A) : l'aide est RELIÉE au champ. -->
+          <p id="aide-courriel" class="aide">Exemple : prenom.nom@exemple.fr</p>
+          <p id="err-courriel" class="erreur" hidden></p>
+        </div>
+
+        <div class="champ">
+          <label for="cp">Code postal <span aria-hidden="true">*</span></label>
+          <input
+            id="cp"
+            name="cp"
+            type="text"
+            inputmode="numeric"
+            pattern="[0-9]{5}"
+            required
+            autocomplete="postal-code"
+            aria-describedby="aide-cp"
+          />
+          <p id="aide-cp" class="aide">Cinq chiffres. Exemple : 69100</p>
+          <p id="err-cp" class="erreur" hidden></p>
+        </div>
+
+        <!-- 11.5 (A) : les champs de même nature sont regroupés, et la question est
+             portée par la légende. Sans cela, le lecteur annonce « Courriel, bouton
+             radio » sans dire de quoi il s'agit. -->
+        <fieldset class="groupe">
+          <legend>Mode de contact <span aria-hidden="true">*</span></legend>
+          <label><input type="radio" name="contact" value="courriel" required /> Courriel</label>
+          <label><input type="radio" name="contact" value="tel" /> Téléphone</label>
+          <p id="err-contact" class="erreur" hidden></p>
+        </fieldset>
+
+        <button type="submit" class="bouton">Envoyer</button>
+      </form>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

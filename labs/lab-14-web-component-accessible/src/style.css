@@ -1,0 +1,4 @@
+/* STARTER. Le style du document. L'intérieur du composant est stylé dans le composant. */
+body { font-family: system-ui, sans-serif; margin: 0; }
+.contenu { padding: 1rem; max-inline-size: 45rem; }
+:focus-visible { outline: 2px solid rgb(11, 95, 255); outline-offset: 2px; }

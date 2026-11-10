@@ -1,0 +1,64 @@
+/* SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN.
+
+   Sous préférence réduite, on ne raccourcit pas : on SUPPRIME LE DÉPLACEMENT en gardant
+   l'information qu'un changement a eu lieu. Module 12 § 4.2. */
+
+html { scroll-behavior: smooth; }
+body { font-family: system-ui, sans-serif; margin: 0; }
+.contenu { padding: 1rem; max-inline-size: 45rem; }
+
+.progression {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  block-size: 4px;
+  background: rgb(11, 95, 255);
+  transform-origin: 0 50%;
+  animation: remplir linear;
+  animation-timeline: scroll(root block);
+}
+@keyframes remplir { from { scale: 0 1; } to { scale: 1 1; } }
+
+.cartes { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+
+.carte {
+  border: 1px solid #c8c8c8;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  animation: glisser 600ms both;
+}
+.carte:nth-child(2) { animation-delay: 120ms; }
+.carte:nth-child(3) { animation-delay: 240ms; }
+
+@keyframes glisser {
+  from { opacity: 0; translate: 0 2rem; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+/* Un fondu SANS déplacement. L'utilisateur garde l'indication qu'un élément apparaît,
+   sans subir le mouvement. */
+@keyframes apparaitre {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.remplissage { block-size: 150vh; }
+
+@media (prefers-reduced-motion: reduce) {
+  /* Une AUTRE animation, pas la même raccourcie. */
+  .carte { animation: apparaitre 150ms both; }
+
+  /* Les trois lignes qu'on oublie. Module 12 § 4.2.
+     ATTENTION A L'ORDRE : le raccourci `animation` reinitialise `animation-timeline`
+     a sa valeur initiale (auto). Il doit donc venir AVANT, jamais apres. */
+  .progression { animation: none; animation-timeline: none; }
+  html { scroll-behavior: auto; }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+:focus-visible { outline: 2px solid rgb(11, 95, 255); outline-offset: 2px; }

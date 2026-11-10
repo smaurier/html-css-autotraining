@@ -1,0 +1,22 @@
+/* STARTER. La carte décide de sa mise en page d'après la taille de l'ECRAN.
+   Résultat : dans la barre latérale étroite, elle reste en deux colonnes alors qu'elle n'a
+   pas la place, parce que l'écran, lui, est large. */
+
+body { font-family: system-ui, sans-serif; margin: 0; }
+.contenu { padding: 1rem; max-inline-size: 70rem; }
+
+.page { display: grid; grid-template-columns: 1fr 14rem; gap: 1rem; }
+.lateral { border-inline-start: 1px solid #c8c8c8; padding-inline-start: 1rem; }
+
+.carte { border: 1px solid #c8c8c8; border-radius: 0.6rem; padding: 1rem; }
+.carte h2 { margin: 0 0 0.25rem; font-size: 1.1rem; }
+.carte p { margin: 0; }
+.carte-media { inline-size: 4rem; block-size: 4rem; }
+.carte-corps { display: grid; gap: 0.75rem; }
+
+/* Le défaut : c'est l'écran qui décide, pas la place disponible. */
+@media (width >= 48rem) {
+  .carte-corps { grid-template-columns: 4rem 1fr; align-items: center; }
+}
+
+:focus-visible { outline: 2px solid rgb(11, 95, 255); outline-offset: 2px; }

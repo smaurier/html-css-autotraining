@@ -1,0 +1,32 @@
+/* STARTER.
+   Deux défauts, et ils sont du même genre : le navigateur ne sait pas ce qu'il y a dans
+   ces custom properties, donc il ne peut ni les valider ni les interpoler. */
+
+body { font-family: system-ui, sans-serif; margin: 0; }
+.contenu { padding: 1rem; max-inline-size: 45rem; }
+
+:root {
+  --accent: rgb(11, 95, 255);
+  --angle: 0deg;
+}
+
+.carte {
+  border: 1px solid #c8c8c8;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  background: linear-gradient(var(--angle), #f4f4f4, #e2e2e2);
+  transition: --angle 600ms linear;
+}
+
+.carte.tourne { --angle: 180deg; }
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  background: var(--accent);
+  color: rgb(255, 255, 255);
+}
+
+button { font: inherit; padding: 0.5rem 0.9rem; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

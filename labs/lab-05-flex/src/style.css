@@ -1,0 +1,28 @@
+/* STARTER. La barre déborde dès que le titre est long, et la rustine actuelle
+   (overflow: hidden sur la barre) coupe aussi les halos de focus. */
+
+body { font-family: system-ui, sans-serif; margin: 0; }
+.contenu { padding: 1rem; max-inline-size: 45rem; }
+
+.barre {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  border: 1px solid #c8c8c8;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  /* La rustine : elle cache le symptôme et coupe le focus. */
+  overflow: hidden;
+}
+
+.titre {
+  margin: 0;
+  font-weight: 600;
+  flex: 1;
+  /* On veut le titre sur UNE ligne. Et c'est là que ça déborde : un élément flex a
+     min-width: auto, donc il refuse de descendre sous la largeur de son contenu. */
+  white-space: nowrap;
+}
+
+button { font: inherit; padding: 0.4rem 0.7rem; white-space: nowrap; }
+:focus-visible { outline: 2px solid rgb(11, 95, 255); outline-offset: 2px; }

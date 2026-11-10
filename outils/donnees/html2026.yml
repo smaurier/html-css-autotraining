@@ -1,0 +1,1001 @@
+- id: forms
+  template: featurev3
+  slug: features
+  messageId: features.features_intro_html2026
+  randomizeSectionSequence: true
+  questions:
+    - id: datalist_element
+    - id: showpicker
+    - id: customizable_select
+
+    # - id: autocomplete_attribute # removed in 2024
+    # - id: media_capture # removed in 2024
+    # - id: formdata # removed in 2024
+
+    # - id: input_checkbox_switch
+    #   yearAdded: 2025
+
+    - id: input_type_color
+      yearAdded: 2025
+
+    # - id: input_type_color_colospace # removed in 2026 (too niche)
+    #   yearAdded: 2025
+
+    # - id: input_type_color_alpha # removed in 2026 (too niche)
+    #   yearAdded: 2025
+
+    # - id: contenteditable_plaintext # removed in 2026 (too niche)
+
+    - id: forms_pain_points
+      autoAddParentTokens: true
+      disableRegexMatching: true
+      optionsNamespace: pain_points
+      disallowedTokenIds: [form_issues]
+      matchTags: [common_pain_points]
+      template: textList
+
+- id: interactivity
+  template: featurev3
+  slug: features
+  randomizeSectionSequence: true
+  questions:
+    - id: details_element
+    - id: accordion_element
+    - id: dialog_element
+
+    - id: dialog_closedby
+      yearAdded: 2025
+
+    # - id: dialog_requestclose # removed in 2026 (too niche)
+    #   yearAdded: 2025
+
+    - id: popover_api
+
+    - id: popover_hint
+      yearAdded: 2025
+
+    - id: command_invokers
+      yearAdded: 2025
+
+    - id: element_before
+      yearAdded: 2025
+
+    - id: navigation_api
+      yearAdded: 2026
+
+    # - id: element_move_before # removed in 2026 (too niche)
+    #   yearAdded: 2025
+
+    - id: interactivity_pain_points
+      autoAddParentTokens: true
+      disableRegexMatching: true
+      optionsNamespace: pain_points
+      matchTags: [common_pain_points]
+      template: textList
+
+# - id: graphics_multimedia
+#   template: featurev3
+#   slug: features
+#   randomizeSectionSequence: true
+#   questions:
+#     - id: svg_element
+
+#     - id: canvas_element
+
+#     # - id: canvas_colorspace # removed in 2026 (too niche)
+#     #   yearAdded: 2025
+
+#     - id: canvas_drawelement
+#       yearAdded: 2025
+
+#     # - id: model_element # removed in 2026 (too niche)
+
+#     # - id: webxr # removed in 2026 (too niche)
+#     #   yearAdded: 2025
+
+#     # - id: webgpu # removed in 2026 (too niche)
+#     #   yearAdded: 2025
+
+#     # - id: webgl # remove in 2026? (low comments)
+#     #   yearAdded: 2025
+
+#     - id: jpeg_xl
+#       yearAdded: 2025
+
+#     - id: graphics_pain_points
+#       disableRegexMatching: true
+#       matchTags: [common_pain_points]
+#       template: textList
+
+- id: content
+  template: featurev3
+  slug: features
+  randomizeSectionSequence: true
+  questions:
+    # - id: math_element # removed in 2026 (widely available + too niche)
+
+    # - id: mapviewer_element # removed in 2026 (too new + too niche)
+    #   yearAdded: 2025
+
+    # - id: content_security_policy # removed in 2026 (too old + widely available)
+    - id: sanitizer_api
+
+    - id: hidden_until_found
+      yearAdded: 2025
+
+    - id: intl_segmenter
+      yearAdded: 2024
+
+    - id: intl_locale
+      yearAdded: 2025
+
+    - id: html_modules
+
+    - id: template_element
+
+    - id: import_attributes
+      yearAdded: 2026
+
+    - id: urlpattern
+      yearAdded: 2026
+
+    - id: web_mcp
+      yearAdded: 2026
+
+    - id: geolocation_element
+      yearAdded: 2026
+
+    - id: content_pain_points
+      autoAddParentTokens: true
+      disableRegexMatching: true
+      optionsNamespace: pain_points
+      matchTags: [common_pain_points]
+      template: textList
+
+- id: performance
+  template: featurev3
+  slug: features
+  randomizeSectionSequence: true
+  questions:
+    - id: lazy_loading
+    - id: respimg_attributes
+
+    - id: img_sizes_auto
+      yearAdded: 2025
+
+    - id: fetchpriority_attribute
+    # - id: blocking_render # removed in 2026 (too niche)
+    # - id: link_rel_expect # removed in 2026 (too niche)
+    #   yearAdded: 2025
+
+    - id: speculation_rules
+      yearAdded: 2025
+
+    - id: web_transport_api
+      yearAdded: 2026
+
+    - id: performance_pain_points
+      autoAddParentTokens: true
+      disableRegexMatching: true
+      optionsNamespace: pain_points
+      disallowedTokenIds: [performance]
+      # matchTags: [common_pain_points]
+      matchTags: [common_pain_points]
+      template: textList
+
+# - id: security
+#   template: featurev3
+#   slug: features
+#   questions:
+#     - id: content_security_policy
+#     - id: sanitizer_api
+
+#     - id: security_pain_points
+#       matchTags: [common_pain_points]
+#       template: textList
+
+- id: web_components
+  template: featurev3
+  slug: features
+  randomizeSectionSequence: true
+  questions:
+    - id: custom_elements_using
+    - id: custom_elements_defining
+
+    - id: declarative_custom_elements
+      yearAdded: 2025
+
+    - id: scoped_element_registries
+    - id: shadow_dom
+    - id: declarative_shadow_dom
+    # - id: slot_attribute # removed in 2026 (niche + widely supported + low comments)
+    # - id: imperative_slot # removed in 2026 (too niche)
+    - id: element_internals
+
+    # - id: reference_target_api # removed in 2026 (too niche)
+    #   yearAdded: 2025
+    # - id: has_slotted # removed in 2026 (too niche)
+    #   yearAdded: 2025
+
+    # - id: web_components_libraries
+    #   template: multipleWithOther
+    #   matchTags: [libraries]
+    #   options:
+    #     - id: shoelace
+    #     - id: spectrum_wc
+    #     - id: lightning_wc
+    #     - id: fast_design
+    #     - id: elix
+    #     - id: lion_wc
+    #     - id: material_wc
+    #     - id: litelement
+    #     - id: stencil
+    #     - id: polymer
+    #     - id: svelte
+    #     - id: ionic
+    #     - id: na
+
+    # - id: reasons_for_not_using_web_components
+    #   template: multipleWithOther
+    #   options:
+    #     - id: not_interested
+    #     - id: no_chance
+    #     - id: negative_experience
+    #     - id: use_frameworks_instead
+    #     - id: compatibility_issues
+
+    # - id: using_web_components_pain_points
+    #   matchTags: [common_pain_points, web_components_pain_points]
+    #   template: textList
+
+    # - id: making_web_components_pain_points
+    #   matchTags: [common_pain_points, web_components_pain_points]
+    #   template: textList
+
+    # - id: web_components_common_pain_points
+    #   limit: 3
+    #   matchTags: [common_pain_points, web_components_pain_points]
+    #   template: multiple
+    #   options:
+    #     - id: complex_apis
+    #     - id: a11y_issues
+    #     - id: i18n_issues
+    #     - id: low_shadow_dom_specificity
+    #     - id: overly_strict_encapsulation
+    #     - id: overreliance_on_js
+    #     - id: design_tokens_access
+    #     - id: native_element_extension
+    #     - id: slotted_descendants_style
+    #     # - id: poor_ssr_support
+    #     - id: na
+
+    # - id: web_components_other_pain_points
+    #   disableRegexMatching: true
+    #   matchTags: [common_pain_points, web_components_pain_points]
+    #   template: textList
+
+    - id: web_components_pain_points
+      autoAddParentTokens: true
+      disableRegexMatching: true
+      optionsNamespace: pain_points
+      matchTags: [common_pain_points, web_components_pain_points]
+      template: textList
+
+- id: accessibility
+  template: featurev3
+  slug: features
+  randomizeSectionSequence: true
+  questions:
+    # - id: landmark_elements # removed in 2026 (too common)
+    - id: tabindex_attribute
+    - id: focusgroup_attribute
+    # - id: search_element # removed in 2026 (too common)
+
+    - id: accessibility_techniques
+      template: multipleWithOther
+      matchTags: [accessibility]
+      cutoff: 999
+      options:
+        # - id: tabindex
+        - id: keyboard_navigation
+        # - id: aria_attributes
+        - id: descriptive_alt_text
+        - id: skip_to_content
+        - id: fieldset_and_legend
+        - id: headings_hierarchy
+        - id: meaningful_link_text
+        - id: form_control_label
+        - id: visible_focus
+        - id: pointer_alternative
+        - id: good_color_contrast
+        - id: color_alternative
+        - id: prefers_reduced_motion
+        - id: prefers_contrast
+        - id: prefers_color_scheme
+        - id: na
+
+    - id: accessibility_disabilities
+      template: multipleWithOther
+      matchTags: [accessibility, disabilities]
+      allowComment: true
+      options:
+        - id: low_vision
+        - id: atypical_vision
+        - id: mobility_impairments
+        - id: vestibular_disorders
+        - id: learning_disabilities
+        - id: cognitive_impairments
+        - id: hearing_impairments
+        - id: na
+
+    - id: accessibility_screenreaders
+      template: multipleWithOtherSentiment
+      matchTags: [accessibility, browsers]
+      options:
+        - id: voiceover
+        - id: jaws
+        - id: talkback
+        - id: nvda
+        - id: narrator
+        - id: orca
+        - id: chrome_devtools
+        - id: chromevox
+        - id: wave
+        - id: firefox_accessibility_inspector
+        - id: na
+
+    - id: accessibility_tools
+      template: multipleWithOtherSentiment
+      matchTags: [accessibility, browsers, services]
+      order: alphabetical
+      options:
+        - id: axe
+        - id: lighthouse
+        - id: assistiv_labs
+        - id: voiceover_js
+        - id: guidepup
+        - id: wave
+        - id: browser_devtools
+        - id: firefox_accessibility_inspector
+        - id: siteimprove
+        - id: accessibility_insights
+        - id: pa11y
+        - id: storybook
+        - id: arc
+        - id: polypane
+        - id: ibm_accessibility_checker
+        - id: silktide
+        - id: na
+
+    - id: accessibility_ai_impact
+      yearAdded: 2026
+      template: single
+      optionsAreNumeric: true
+      optionsAreSequential: true
+      options:
+        - id: 0
+        - id: 1
+        - id: 2
+        - id: 3
+        - id: 4
+
+    - id: accessibility_pain_points
+      autoAddParentTokens: true
+      disableRegexMatching: true
+      optionsNamespace: pain_points
+      matchTags: [common_pain_points]
+      disallowedTokenIds: [accessibility]
+      template: textList
+
+- id: system_capabilities
+  template: featurev3
+  slug: features
+  randomizeSectionSequence: true
+  questions:
+    # - id: client_hints
+    - id: filesystem_access
+    - id: web_share_api
+
+    # - id: app_manifest_share_target # removed in 2026 (too niche)
+    #   yearAdded: 2025
+
+    # - id: file_handling_api # removed in 2026 (too niche)
+
+    # - id: register_protocol_handler # removed in 2026 (too niche)
+    #   yearAdded: 2025
+
+    - id: web_bluetooth_api
+      yearAdded: 2025
+
+    - id: web_usb_api
+      yearAdded: 2025
+
+    - id: speech_recognition_api
+      yearAdded: 2025
+
+    - id: payment_request_api
+      yearAdded: 2025
+
+    # - id: web_nfc_api # removed in 2026 (too niche)
+    #   yearAdded: 2025
+
+    - id: system_capabilities_pain_points
+      autoAddParentTokens: true
+      disableRegexMatching: true
+      optionsNamespace: pain_points
+      matchTags: [common_pain_points]
+      template: textList
+
+# - id: other_tools
+#   questions:
+#     - id: site_generators
+#       template: multipleWithOther
+#       matchTags: [libraries]
+#       options:
+#         - id: jekyll
+#         - id: eleventy
+#         - id: hugo
+#         - id: gatsby
+#         - id: nextjs
+#         - id: nuxt
+#         - id: astro
+#         - id: sveltekit
+#         - id: remix
+#         - id: na
+
+#     - id: validation_tools
+#       template: multipleWithOther
+#       matchTags: [libraries, text_editors]
+#       options:
+#         - id: w3c_validator
+#         - id: nu_html_checker
+#         - id: html_validate
+#         - id: html_hint
+#         - id: na
+
+#     - id: performance_tools
+#       template: multipleWithOther
+#       matchTags: [services]
+#       options:
+#         - id: lighthouse
+#         - id: browser_devtools
+#         - id: pagespeed_insights
+#         - id: webpagetest
+#         - id: pingdom
+#         - id: na
+
+#     - id: analytics_tools
+#       template: multipleWithOther
+#       matchTags: [services]
+#       options:
+#         - id: google_analytics
+#         - id: plausible
+#         - id: fathom
+#         - id: new_relic
+#         - id: mixpanel
+#         - id: clicky
+#         - id: matomo
+#         - id: heap
+#         - id: datadog
+#         - id: na
+
+#     - id: browsers
+#       template: multipleWithOther
+#       options:
+#         - id: edge
+#         - id: chrome
+#         - id: safari
+#         - id: firefox
+#         - id: internet_explorer_11
+#         - id: internet_explorer_8_9_10
+#         - id: opera_mini
+#         - id: safari_ios
+#         - id: chrome_ios
+#         - id: chrome_android
+#         - id: firefox_android
+#         - id: samsung_internet
+#         - id: vivaldi
+#         - id: brave
+#         - id: ucbrowser
+#         - id: opera
+#         - id: polypane
+#         - id: arc
+#         - id: ladybird
+
+#     - id: web_platform_resources
+#       template: multipleWithOther
+#       matchTags: [sites, people]
+#       sectionId: resources
+#       options:
+#         - id: w3c
+#         - id: mdn
+#         - id: web_dev
+#         - id: caniuse
+#         - id: chrome_platform_status
+#         - id: webkit_blog
+#         - id: http_archive
+#         - id: web_features_explorer
+#         # - id: rum_archive # for 2025
+
+- id: usage
+  questions:
+    - id: html_interoperability_features
+      disableRegexMatching: true
+      matchTags:
+        [html_features, js_features, css_features, html_missing_features]
+      template: textList
+      instructions: |
+        This question asks respondents which existing HTML features or browser APIs they are unable to use because of browser differences or lack of support. Answers mostly name features.
+
+        The codebook contains only features. Assign a code for each feature the answer names or clearly describes, and nothing else. Do not assign codes for the kind of problem, or for parent categories of a feature. Answers naming several features get one code per feature.
+
+        Use the most specific feature that matches, e.g. "popover=hint" → popover_hint rather than popover_api.
+
+        Leave the list empty when no feature in the codebook applies, such as "None", "Too many to list", or a feature that isn't in the codebook. Never pick a loosely related code just to assign something.
+
+        Examples:
+        - "Customizable select" → ["customizable_select"]
+        - "Sanitizer API, Temporal API, scroll-driven animations" → ["sanitizer_api", "temporal", "scroll_driven_animations"]
+        - "Web Bluetooth" → ["web_bluetooth_api"]
+        - "None! We only support one modern browser version" → []
+
+    - id: html_functionality_features
+      disableRegexMatching: true
+      matchTags:
+        [html_features, js_features, css_features, html_missing_features]
+      template: textList
+      instructions: |
+        This question asks respondents which existing HTML features or browser APIs they are unable to use for reasons other than browser support, and why. Answers usually name a feature and explain the problem with it (hard to style, poor accessibility, missing functionality, etc.).
+
+        The codebook contains only features. Assign a code for each feature the answer names or clearly describes, and nothing else. Never code the reason the feature can't be used, the kind of problem, or parent categories of a feature. Answers naming several features get one code per feature.
+
+        Use the most specific feature that matches, e.g. "Multiple select" → select_element_multiselect rather than select_element, and "combobox" → autocomplete.
+
+        Leave the list empty when no feature in the codebook applies, such as "None that I can think of", a general complaint, or a feature that isn't in the codebook. Never pick a loosely related code just to assign something.
+
+        Examples:
+        - "Datalists (can't limit entries to only the ones in the list without JS)" → ["datalist_element"]
+        - "Dialog, custom select element, popover api, commandfor because our UI library doesn't support them yet" → ["dialog_element", "customizable_select", "popover_api", "command_invokers"]
+        - "range slider with two thumbs" → ["multi_handle_slider"]
+        - "None that I can think of" → []
+
+    # - id: html_new_features
+    #   limit: 3
+    #   template: multipleWithOther
+    #   allowComment: true
+    #   order: random
+    #   matchTags:
+    #     [features_html, features_js, css_features, html_missing_features]
+    #   options:
+    #     - id: popover_api
+    #     - id: custom_highlight_api
+    #     - id: clipboard_api
+    #     - id: accelerometer_api
+    #     - id: picture_in_picture_api
+    #     - id: edit_context
+    #     - id: eyedropper
+    #     - id: file_system_access
+    #     - id: jpeg_xl
+    #     - id: web_bluetooth_api
+    #     - id: background_fetch
+    #     - id: idle_detector
+
+    - id: html_missing_elements
+      limit: 4
+      template: multipleWithOther
+      allowComment: true
+      order: random
+      matchTags:
+        [features_html, features_js, css_features, html_missing_features]
+      options:
+        - id: charts
+        - id: combobox_autocomplete
+        - id: context_menu
+        - id: datatable
+        - id: dropdown_menu
+        - id: footnotes
+        - id: html_include
+        - id: maps
+        - id: offcanvas
+        - id: rich_code_block
+        - id: rich_text_editor
+        - id: scroll_area
+        - id: segmented_button
+        - id: skeleton_loading_placeholder
+        - id: sortable_list
+        - id: switch
+        - id: tabs
+        - id: callout
+
+        # - id: range_slider
+        # - id: image_zoom
+        # - id: star_rating
+        # - id: accordion
+        # - id: calendar
+        # - id: carousel
+        # - id: command_palette
+        # - id: progress_bar
+        # - id: toast_message
+        # - id: tooltip
+        # - id: spinner
+        # - id: icon
+        - id: na
+
+    - id: html_styling_issues
+      limit: 3
+      template: multipleWithOther
+      options:
+        - id: details_element
+        - id: dialog_element
+        - id: input_type_checkbox
+        - id: input_type_date
+        - id: input_type_time
+        - id: input_type_number
+        - id: input_type_radio
+        - id: input_type_range
+        - id: input_type_color
+        - id: select_element
+        - id: select_multiple_element
+        - id: svg_element
+        - id: datalist_element
+
+        - id: fieldset_and_legend
+        - id: progress_element
+        - id: popover_api
+        - id: validation_errors
+
+    # - id: html_interoperability_features
+    #   template: longtext
+
+    # - id: html_missing_features
+    #   template: multipleWithOther
+    #   options:
+    #     - id: accordion_element
+    #     - id: breadcrumb_element
+    #     - id: drawer_element
+    #     - id: todo
+
+    # - id: html_common_components
+    #   template: multipleWithOther
+    #   options:
+    #     - id: accordion
+    #     - id: dialog
+    #     - id: tabs
+    #     - id: toast
+    #     - id: toggle
+
+    # - id: tools_for_other_developers
+    #   template: single
+    #   order: alphabetical
+    #   allowComment: true
+    #   options:
+    #     - id: na
+    #     - id: a_few
+    #     - id: less_than_1000
+    #     - id: more_than_1000
+    #     - id: more_than_1000000
+
+    # - id: industry_sector
+    #   intlId: user_info.industry_sector
+    #   template: multipleWithOther
+    #   matchTags: [industry_sectors]
+    #   order: alphabetical
+    #   options:
+    #     - id: automotive
+    #     - id: consulting
+    #     - id: cyber_security
+    #     - id: ecommerce
+    #     - id: education
+    #     - id: energy
+    #     - id: entertainment
+    #     - id: finance
+    #     - id: government
+    #     - id: healthcare
+    #     - id: insurance
+    #     - id: logistics
+    #     - id: manufacturing
+    #     - id: marketing_tools
+    #     - id: news_media
+    #     - id: programming_tools
+    #     - id: real_estate
+    #     - id: socialmedia
+    #     - id: tourism
+    #     - id: transport
+
+    # removed in 2026 (shorten survey)
+    # - id: component_strategies
+    #   template: multipleWithOther
+    #   matchTags: [libraries]
+    #   options:
+    #     - id: server_side_templating
+    #     - id: build_time_templating
+    #     - id: client_side_templating
+    #     - id: component_based_frameworks
+    #     - id: web_components
+    #     - id: web_components_frameworks
+    #     - id: copy_paste
+    #     - id: na
+
+    # removed in 2026 (shorten survey)
+    # - id: design_system_strategies
+    #   template: multipleWithOther
+    #   options:
+    #     - id: elements_components
+    #     - id: design_tokens
+    #     - id: utilities
+    #     - id: guidelines
+    #     - id: patterns
+    #     - id: na
+
+    - id: progressive_enhancement_priority
+      yearAdded: 2026
+      template: single
+      options:
+        - id: not_a_concern
+        - id: low_priority
+        - id: high_priority
+        - id: required
+
+    - id: html_css_js_balance
+      template: slider
+      allowComment: true
+
+    - id: ai_generated_code_balance
+      yearAdded: 2026
+      template: slider
+
+    - id: ai_browser_apis
+      yearAdded: 2026
+      template: multipleWithOther
+      limit: 3
+      randomize: true
+      options:
+        - id: translation
+        - id: language_detection
+        - id: summarization
+        - id: text_generation
+        - id: image_generation
+        - id: speech_generation
+        - id: speech_recognition
+        - id: computer_vision
+        - id: sentiment_analysis
+        - id: caption_generation
+        - id: na
+
+    # removed in 2026 (shorten survey)
+    # - id: what_do_you_use_html_for
+    #   template: multipleWithOther
+    #   matchTags: [use_cases]
+    #   order: alphabetical
+    #   allowComment: true
+    #   options:
+    #     - id: blogs
+    #     - id: design_systems
+    #     - id: desktop_apps
+    #     - id: emails
+    #     - id: marketing_sites
+    #     - id: mobile_apps
+    #     - id: printed_documents
+    #     - id: web_apps
+    #     - id: na
+    # did not have time to find proper wording, maybe in 2026?
+    # - id: design_system_customization
+    #   template: slider
+    - id: html_pain_points_freeform
+      autoAddParentTokens: true
+      disableRegexMatching: true
+      optionsNamespace: pain_points
+      matchTags: [common_pain_points, html_pain_points]
+      template: textList
+      # longText: true # does not work!!! do not use!
+
+# removed in 2026 (shorten survey)
+
+# - id: opinions
+#   messageId: opinions.opinions_intro
+#   questions:
+#     - id: accessibility_is_valued
+#       template: opinion
+
+#     - id: validation_is_important
+#       template: opinion
+
+#     - id: keeping_informed_is_challenging
+#       template: opinion
+
+#     - id: browser_interoperability_is_obstacle
+#       template: opinion
+
+#     - id: browser_interoperability_pace
+#       template: opinion
+
+#     - id: web_platform_right_direction
+#       template: opinion
+
+### DEMOGRAPHICS ###
+
+- id: user_info
+  questions:
+    - id: age
+      template: age_number
+
+    - id: years_of_experience
+      template: years_of_experience
+
+    - id: company_size
+      template: company_size
+
+    - id: job_title
+      template: longtext
+
+    - id: yearly_salary
+      template: yearly_salary
+      # 2024 todo: use yearly_salary_v2
+      showIf:
+        - id: company_size
+          condition:
+            operator: includes
+            values: [10_20, 50_70]
+
+    # removed in 2026 (shorten survey)
+    # - id: higher_education_degree
+    #   template: higher_education_degree
+
+    - id: country
+      template: country
+
+    - id: gender
+      template: gender
+
+    # removed in 2026 (shorten survey)
+    # - id: race_ethnicity
+    #   template: race_ethnicity
+
+    - id: disability_status
+      template: disability_status2
+
+    - id: other_surveys
+      sectionId: resources
+      template: multipleWithOther
+      allowOther: true
+      matchTags: [surveys]
+      options:
+        - id: state_of_js_survey
+        - id: state_of_css_survey
+        - id: state_of_devs_survey
+        - id: state_of_ai_survey
+        - id: state_of_react_survey
+        - id: jetbrains_survey
+        - id: stack_overflow_survey
+        - id: codingame_survey
+        - id: uxtools_survey
+        - id: postman_survey
+        - id: netlify_survey
+        - id: na
+
+    - id: how_did_user_find_out_about_the_survey
+      template: longtext
+      matchType: single
+      matchTags:
+        [
+          people,
+          sites,
+          newsletters,
+          video_creators,
+          podcasts,
+          surveys,
+          events,
+          state_of_html_sources,
+          socialmedia,
+          sources,
+        ]
+
+    - id: survey_length
+      template: single
+      optionsAreNumeric: true
+      yearAdded: 2026
+      options:
+        - id: 0
+        - id: 1
+        - id: 2
+        - id: 3
+        - id: 4
+
+    - id: did_you_run_into_technical_issues
+      template: textList
+      instructions: |
+        This question asks respondents whether they ran into technical issues while taking the survey itself. Answers describe bugs, UX problems, or other difficulties with the survey app or its questions.
+
+        Codes are organized as broad issues (parents) and specific problems (children). Assign the most specific code that describes the problem, e.g. "going back to the previous section wiped my answers" → back_navigation_data_loss, "the welcome message appeared on the Forms page" → intro_message_misplaced. Use a parent code only when no child fits, e.g. "lost my progress" → lost_answers.
+
+        Answers describing several problems get one code per problem.
+
+        Special cases:
+        - "no_issues": the respondent had no problems ("none", "no", "all good", praise). It must be the only code.
+        - "invalid": jokes, spam, or off-topic answers. It must be the only code.
+        - Leave the list empty for answers that are unclear or unrelated to the survey experience.
+
+        Examples:
+        - "The AI-generated code question was labeled 1 - 50% - 9." → ["scale_label_errors"]
+        - "Country list wasn't searchable, had to scroll all the way" → ["country_dropdown"]
+        - "Hit back swipe by accident -- all fill in answers were gone" → ["swipe_back_data_loss"]
+        - "None, great work!" → ["no_issues"]
+
+    - id: missing_questions
+      template: textList
+      matchTags: [html_missing_questions, common_missing_questions]
+      instructions: |
+        This question asks respondents which questions they wish the survey had asked. Each answer is a suggestion for the survey itself.
+
+        Codes are organized as topics (parents) and specific candidate questions (children). Assign the most specific code that captures the question the respondent wants asked, e.g. "How do you verify that your HTML code is correct?" → html_validation_tools, "Do you write HTML yourself or is it generated?" → html_authoring_method. Use a parent code only when the answer names a topic without a more specific question.
+
+        Most answers need 1 code; answers listing several suggestions get one code per suggestion.
+
+        Special cases:
+        - "invalid": jokes, spam, or off-topic answers. It must be the only code.
+        - Leave the list empty for answers with no suggestion, such as "none", "not sure", or "N.A.".
+
+        Examples:
+        - "What are the minimum browsers people are still supporting" → ["browser_support_targets"]
+        - "Suggestions for new HTML elements." → ["semantic_element_opinions"]
+        - "how do you feel about AI" → ["ai_sentiment"]
+        - "Learning resources used" → ["documentation_sources"]
+
+    - id: how_can_we_improve
+      template: longtext
+      instructions: |
+        This question asks respondents how the survey itself could be improved. Answers are suggestions about the survey's content, options, length, UI, translations, or reach.
+
+        Codes are organized as broad areas (parents) and specific suggestions (children). Assign the most specific code that captures the suggestion, e.g. "a link to a feature's MDN page on every question" → information_links, "please include a light mode" → light_mode. Use a parent code only when no child fits.
+
+        Answers with several suggestions get one code per suggestion.
+
+        Special cases:
+        - "positive_impression": the respondent praises the survey. Combine it with other codes only if the answer also contains a concrete suggestion.
+        - "dont_know": the respondent has no suggestion ("idk", "not sure").
+        - "invalid": jokes, spam, rants, or off-topic answers. It must be the only code.
+
+        Examples:
+        - "Short descriptions of each item available without having to click to another page" → ["feature_descriptions"]
+        - "Maybe add some images or code snippets?" → ["live_code_examples"]
+        - "make it shorter" → ["survey_too_long"]
+        - "It's very good already" → ["positive_impression"]
+
+    - id: receive_notifications
+      template: receive_notifications
+
+    - id: referrer
+      matchType: single
+      matchTags:
+        [
+          people,
+          sites,
+          newsletters,
+          video_creators,
+          podcasts,
+          surveys,
+          events,
+          state_of_html_sources,
+          socialmedia,
+          sources,
+        ]
+      hidden: true
+      template: referrer
+
+    - id: sourcetag
+      matchType: single
+      matchTags:
+        [
+          people,
+          sites,
+          newsletters,
+          video_creators,
+          podcasts,
+          surveys,
+          events,
+          state_of_html_sources,
+          socialmedia,
+          sources,
+        ]
+      hidden: true
+      template: sourcetag

@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carrousel | TribuZen</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="contenu">
+      <h1>Photos de l'atelier</h1>
+
+      <div class="carrousel" role="group" aria-label="Photos de l'atelier">
+        <!-- 13.10 (A) : une alternative par simple appui au geste de glissement.
+             13.8 (A) : plus aucun défilement automatique, donc rien à mettre en pause. -->
+        <div class="commandes">
+          <button type="button" id="precedent" class="bouton">Photo précédente</button>
+          <button type="button" id="suivant" class="bouton">Photo suivante</button>
+        </div>
+
+        <!-- 12.11 (A) : une zone défilante doit être atteignable au clavier. tabindex="0"
+             la rend focusable, donc défilable aux flèches, et le rôle plus le nom évitent
+             un arrêt de tabulation muet. Module 13 § 1.1. -->
+        <div class="piste" id="piste" tabindex="0" role="region" aria-label="Photos, faire défiler">
+          <div class="panneau" id="p1"><h2>Préparation</h2><p>Les ingrédients du dimanche.</p></div>
+          <div class="panneau" id="p2"><h2>Cuisson</h2><p>Le four de la salle commune.</p></div>
+          <div class="panneau" id="p3"><h2>Dégustation</h2><p>Tout le monde à table.</p></div>
+        </div>
+
+        <!-- 7.5 (AA) : le changement est annoncé SANS déplacer le focus. -->
+        <p class="visuellement-masque" role="status" id="annonce">Photo 1 sur 3 : Préparation</p>
+      </div>
+
+      <p><a href="/galerie">Voir toute la galerie</a></p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

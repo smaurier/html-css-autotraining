@@ -1,0 +1,82 @@
+<!doctype html>
+<!-- SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Web component | TribuZen</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="contenu">
+      <h1>Réglages</h1>
+
+      <!-- Le libellé est passé par ATTRIBUT, et le composant en fait son nom accessible
+           via ElementInternals. La relation reste d'un seul côté de la frontière, ce qui
+           est la parade au piège du module 18 § 6.1. -->
+      <p>
+        <bascule-notifs id="bascule" libelle="Notifications par courriel">
+          <!-- Shadow DOM DÉCLARATIF : le composant est peint et stylé au premier octet,
+               même si le script n'arrive jamais. Module 18 § 4. -->
+          <template shadowrootmode="open">
+            <style>
+              :host {
+                display: inline-flex;
+                gap: 0.5rem;
+                align-items: center;
+                cursor: pointer;
+              }
+              .piste {
+                inline-size: 2.4rem;
+                block-size: 1.3rem;
+                border-radius: 1rem;
+                background: #767676;
+                display: inline-flex;
+                align-items: center;
+                padding: 2px;
+                flex: none;
+              }
+              .pouce {
+                inline-size: 1rem;
+                block-size: 1rem;
+                border-radius: 50%;
+                background: #ffffff;
+                transition: translate 150ms;
+              }
+              /* L'état vient de ElementInternals, exposé au CSS par :state(). */
+              :host(:state(actif)) .piste { background: #1b5e20; }
+              :host(:state(actif)) .pouce { translate: 1.1rem 0; }
+              @media (prefers-reduced-motion: reduce) {
+                .pouce { transition: none; }
+              }
+            </style>
+            <span class="piste" aria-hidden="true"><span class="pouce"></span></span>
+            <!-- Le slot projette le contenu fourni par la page, et il est stylé PAR LA
+                 PAGE, pas par le composant. Module 18 § 3.2. -->
+            <span class="libelle" part="libelle"><slot>Notifications</slot></span>
+          </template>
+          Notifications par courriel
+        </bascule-notifs>
+      </p>
+
+      <p>
+        <bascule-notifs id="bascule-2" libelle="Résumé hebdomadaire">
+          <template shadowrootmode="open">
+            <style>
+              :host { display: inline-flex; gap: 0.5rem; align-items: center; cursor: pointer; }
+              .piste { inline-size: 2.4rem; block-size: 1.3rem; border-radius: 1rem; background: #767676; display: inline-flex; align-items: center; padding: 2px; flex: none; }
+              .pouce { inline-size: 1rem; block-size: 1rem; border-radius: 50%; background: #ffffff; }
+              :host(:state(actif)) .piste { background: #1b5e20; }
+              :host(:state(actif)) .pouce { translate: 1.1rem 0; }
+            </style>
+            <span class="piste" aria-hidden="true"><span class="pouce"></span></span>
+            <span class="libelle" part="libelle"><slot>Notifications</slot></span>
+          </template>
+          Résumé hebdomadaire
+        </bascule-notifs>
+      </p>
+    </main>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

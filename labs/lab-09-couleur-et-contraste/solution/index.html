@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>État des ateliers | TribuZen</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="contenu">
+      <h1>État des ateliers</h1>
+
+      <p class="secondaire" id="secondaire">Dernière mise à jour il y a deux minutes.</p>
+
+      <ul class="liste">
+        <li class="ligne">
+          <!-- 3.1 (A) : la pastille est décorative. L'information est portée par du TEXTE
+               visible, donc la couleur est redondante et non porteuse. Un texte masqué en
+               CSS ne répondrait pas au critère : le doublement doit être visible. -->
+          <span class="pastille pastille-ok" id="pastille-ok" aria-hidden="true"></span>
+          <span class="nom" id="nom-ok">Cuisine</span>
+          <span class="etat etat-ok">en service</span>
+        </li>
+        <li class="ligne">
+          <span class="pastille pastille-ko" id="pastille-ko" aria-hidden="true"></span>
+          <span class="nom">Jardinage</span>
+          <span class="etat etat-ko">hors service</span>
+        </li>
+      </ul>
+
+      <p class="avertissement" id="avertissement">Deux ateliers nécessitent votre attention.</p>
+
+      <form class="formulaire">
+        <label for="recherche">Chercher un atelier</label>
+        <input id="recherche" name="recherche" type="search" />
+        <button type="submit" class="bouton" id="bouton">Chercher</button>
+      </form>
+    </main>
+  </body>
+</html>

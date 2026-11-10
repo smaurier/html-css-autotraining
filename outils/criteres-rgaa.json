@@ -1,0 +1,322 @@
+{
+ "_source": "Numeros et thematiques du RGAA, publics : https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/",
+ "_note": "Les libelles descriptifs ont ete volontairement retires : ils provenaient d'un support de formation prive. L'outil n'a besoin que des numeros ; la thematique sert uniquement a grouper le rapport.",
+ "1.1": {
+  "theme": "Images"
+ },
+ "1.2": {
+  "theme": "Images"
+ },
+ "1.3": {
+  "theme": "Images"
+ },
+ "1.4": {
+  "theme": "Images"
+ },
+ "1.5": {
+  "theme": "Images"
+ },
+ "1.6": {
+  "theme": "Images"
+ },
+ "1.7": {
+  "theme": "Images"
+ },
+ "1.8": {
+  "theme": "Images"
+ },
+ "1.9": {
+  "theme": "Images"
+ },
+ "2.1": {
+  "theme": "Cadres"
+ },
+ "2.2": {
+  "theme": "Cadres"
+ },
+ "3.1": {
+  "theme": "Couleurs"
+ },
+ "3.2": {
+  "theme": "Couleurs"
+ },
+ "3.3": {
+  "theme": "Couleurs"
+ },
+ "4.1": {
+  "theme": "Multimédia"
+ },
+ "4.2": {
+  "theme": "Multimédia"
+ },
+ "4.3": {
+  "theme": "Multimédia"
+ },
+ "4.4": {
+  "theme": "Multimédia"
+ },
+ "4.5": {
+  "theme": "Multimédia"
+ },
+ "4.6": {
+  "theme": "Multimédia"
+ },
+ "4.7": {
+  "theme": "Multimédia"
+ },
+ "4.8": {
+  "theme": "Multimédia"
+ },
+ "4.9": {
+  "theme": "Multimédia"
+ },
+ "4.10": {
+  "theme": "Multimédia"
+ },
+ "4.11": {
+  "theme": "Multimédia"
+ },
+ "4.12": {
+  "theme": "Multimédia"
+ },
+ "4.13": {
+  "theme": "Multimédia"
+ },
+ "5.1": {
+  "theme": "Tableaux"
+ },
+ "5.2": {
+  "theme": "Tableaux"
+ },
+ "5.3": {
+  "theme": "Tableaux"
+ },
+ "5.4": {
+  "theme": "Tableaux"
+ },
+ "5.5": {
+  "theme": "Tableaux"
+ },
+ "5.6": {
+  "theme": "Tableaux"
+ },
+ "5.7": {
+  "theme": "Tableaux"
+ },
+ "5.8": {
+  "theme": "Tableaux"
+ },
+ "6.1": {
+  "theme": "Liens"
+ },
+ "6.2": {
+  "theme": "Liens"
+ },
+ "7.1": {
+  "theme": "Scripts"
+ },
+ "7.2": {
+  "theme": "Scripts"
+ },
+ "7.3": {
+  "theme": "Scripts"
+ },
+ "7.4": {
+  "theme": "Scripts"
+ },
+ "7.5": {
+  "theme": "Scripts"
+ },
+ "8.1": {
+  "theme": "Éléments obligatoires"
+ },
+ "8.2": {
+  "theme": "Éléments obligatoires"
+ },
+ "8.3": {
+  "theme": "Éléments obligatoires"
+ },
+ "8.4": {
+  "theme": "Éléments obligatoires"
+ },
+ "8.5": {
+  "theme": "Éléments obligatoires"
+ },
+ "8.6": {
+  "theme": "Éléments obligatoires"
+ },
+ "8.7": {
+  "theme": "Éléments obligatoires"
+ },
+ "8.8": {
+  "theme": "Éléments obligatoires"
+ },
+ "8.9": {
+  "theme": "Éléments obligatoires"
+ },
+ "8.10": {
+  "theme": "Éléments obligatoires"
+ },
+ "9.1": {
+  "theme": "Structuration de l'information"
+ },
+ "9.2": {
+  "theme": "Structuration de l'information"
+ },
+ "9.3": {
+  "theme": "Structuration de l'information"
+ },
+ "9.4": {
+  "theme": "Structuration de l'information"
+ },
+ "10.1": {
+  "theme": "Présentation de l'information"
+ },
+ "10.2": {
+  "theme": "Présentation de l'information"
+ },
+ "10.3": {
+  "theme": "Présentation de l'information"
+ },
+ "10.4": {
+  "theme": "Présentation de l'information"
+ },
+ "10.5": {
+  "theme": "Présentation de l'information"
+ },
+ "10.6": {
+  "theme": "Présentation de l'information"
+ },
+ "10.7": {
+  "theme": "Présentation de l'information"
+ },
+ "10.8": {
+  "theme": "Présentation de l'information"
+ },
+ "10.9": {
+  "theme": "Présentation de l'information"
+ },
+ "10.10": {
+  "theme": "Présentation de l'information"
+ },
+ "10.11": {
+  "theme": "Présentation de l'information"
+ },
+ "10.12": {
+  "theme": "Présentation de l'information"
+ },
+ "10.13": {
+  "theme": "Présentation de l'information"
+ },
+ "10.14": {
+  "theme": "Présentation de l'information"
+ },
+ "11.1": {
+  "theme": "Formulaires"
+ },
+ "11.2": {
+  "theme": "Formulaires"
+ },
+ "11.3": {
+  "theme": "Formulaires"
+ },
+ "11.4": {
+  "theme": "Formulaires"
+ },
+ "11.5": {
+  "theme": "Formulaires"
+ },
+ "11.6": {
+  "theme": "Formulaires"
+ },
+ "11.7": {
+  "theme": "Formulaires"
+ },
+ "11.8": {
+  "theme": "Formulaires"
+ },
+ "11.9": {
+  "theme": "Formulaires"
+ },
+ "11.10": {
+  "theme": "Formulaires"
+ },
+ "11.11": {
+  "theme": "Formulaires"
+ },
+ "11.12": {
+  "theme": "Formulaires"
+ },
+ "11.13": {
+  "theme": "Formulaires"
+ },
+ "12.1": {
+  "theme": "Navigation"
+ },
+ "12.2": {
+  "theme": "Navigation"
+ },
+ "12.3": {
+  "theme": "Navigation"
+ },
+ "12.4": {
+  "theme": "Navigation"
+ },
+ "12.5": {
+  "theme": "Navigation"
+ },
+ "12.6": {
+  "theme": "Navigation"
+ },
+ "12.7": {
+  "theme": "Navigation"
+ },
+ "12.8": {
+  "theme": "Navigation"
+ },
+ "12.9": {
+  "theme": "Navigation"
+ },
+ "12.10": {
+  "theme": "Navigation"
+ },
+ "12.11": {
+  "theme": "Navigation"
+ },
+ "13.1": {
+  "theme": "Consultation"
+ },
+ "13.2": {
+  "theme": "Consultation"
+ },
+ "13.3": {
+  "theme": "Consultation"
+ },
+ "13.4": {
+  "theme": "Consultation"
+ },
+ "13.5": {
+  "theme": "Consultation"
+ },
+ "13.6": {
+  "theme": "Consultation"
+ },
+ "13.7": {
+  "theme": "Consultation"
+ },
+ "13.8": {
+  "theme": "Consultation"
+ },
+ "13.9": {
+  "theme": "Consultation"
+ },
+ "13.10": {
+  "theme": "Consultation"
+ },
+ "13.11": {
+  "theme": "Consultation"
+ },
+ "13.12": {
+  "theme": "Consultation"
+ }
+}

@@ -1,0 +1,34 @@
+/* SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN. */
+
+body { font-family: system-ui, sans-serif; margin: 0; }
+.contenu { padding: 1rem; max-inline-size: 32rem; }
+
+.formulaire { display: grid; gap: 1rem; }
+.champ { display: grid; gap: 0.2rem; }
+label { font-weight: 500; }
+
+.mention { color: #555555; font-size: 0.9rem; }
+.aide { margin: 0; font-size: 0.875rem; color: #5a5a5a; }
+.erreur { margin: 0; font-size: 0.875rem; color: #a3161b; font-weight: 500; }
+
+.resume { border: 2px solid #a3161b; border-radius: 0.4rem; padding: 0.75rem; margin-block-end: 1rem; }
+.resume h2 { margin: 0 0 0.4rem; font-size: 1rem; }
+.resume ul { margin: 0; padding-inline-start: 1.2rem; }
+
+fieldset.groupe { display: grid; gap: 0.25rem; border: 1px solid #949494; border-radius: 0.4rem; }
+legend { font-weight: 500; padding-inline: 0.3rem; }
+
+input[type="email"], input[type="text"] {
+  font: inherit;
+  padding: 0.45rem;
+  border: 1px solid #949494;
+  border-radius: 0.3rem;
+}
+
+/* :user-invalid et non :invalid : l'erreur ne s'affiche qu'APRÈS interaction.
+   Un formulaire annoncé invalide dès l'arrivée est une information fausse. Module 14 § 1.2. */
+input:user-invalid { border-color: #a3161b; }
+input:user-valid { border-color: #1b5e20; }
+
+.bouton { font: inherit; padding: 0.5rem 0.9rem; border: 1px solid #0b5fff; border-radius: 0.4rem; background: #0b5fff; color: #ffffff; justify-self: start; }
+:focus-visible { outline: 2px solid #0b5fff; outline-offset: 2px; }

@@ -1,0 +1,47 @@
+/* STARTER. Le bloc de préférence réduite existe, et il ne protège de rien :
+   une translation de 2rem en 0,01 ms reste une translation de 2rem.
+   Trois lignes manquent aussi : animation-timeline, scroll-behavior, view transitions. */
+
+html { scroll-behavior: smooth; }
+body { font-family: system-ui, sans-serif; margin: 0; }
+.contenu { padding: 1rem; max-inline-size: 45rem; }
+
+.progression {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  block-size: 4px;
+  background: rgb(11, 95, 255);
+  transform-origin: 0 50%;
+  animation: remplir linear;
+  animation-timeline: scroll(root block);
+}
+@keyframes remplir { from { scale: 0 1; } to { scale: 1 1; } }
+
+.cartes { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+
+.carte {
+  border: 1px solid #c8c8c8;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  animation: glisser 600ms both;
+}
+.carte:nth-child(2) { animation-delay: 120ms; }
+.carte:nth-child(3) { animation-delay: 240ms; }
+
+@keyframes glisser {
+  from { opacity: 0; translate: 0 2rem; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+.remplissage { block-size: 150vh; }
+
+/* La fausse protection : le mouvement a toujours lieu, juste plus vite. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:focus-visible { outline: 2px solid rgb(11, 95, 255); outline-offset: 2px; }

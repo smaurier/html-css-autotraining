@@ -1,0 +1,90 @@
+<!doctype html>
+<!-- SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Onglets et interrupteur | TribuZen</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="contenu">
+      <h1>Fiche de membre</h1>
+
+      <div class="onglets" id="onglets">
+        <!-- Des <button> et non des <div> : le rôle, le focus et l'activation au clavier
+             viennent avec. ARIA n'ajoute aucun comportement. Module 01 § 1.2. -->
+        <div class="barre" role="tablist" aria-label="Sections de la fiche">
+          <button
+            type="button"
+            role="tab"
+            id="onglet-profil"
+            class="onglet"
+            aria-selected="true"
+            aria-controls="panneau-profil"
+          >
+            Profil
+          </button>
+          <!-- Focus géré : un seul onglet dans l'ordre de tabulation, les autres à -1.
+               C'est ce qui fait que Tab traverse le groupe d'un coup. Module 17 § 3.1. -->
+          <button
+            type="button"
+            role="tab"
+            id="onglet-activite"
+            class="onglet"
+            aria-selected="false"
+            aria-controls="panneau-activite"
+            tabindex="-1"
+          >
+            Activité
+          </button>
+          <button
+            type="button"
+            role="tab"
+            id="onglet-reglages"
+            class="onglet"
+            aria-selected="false"
+            aria-controls="panneau-reglages"
+            tabindex="-1"
+          >
+            Réglages
+          </button>
+        </div>
+
+        <div class="panneau" role="tabpanel" id="panneau-profil" aria-labelledby="onglet-profil" tabindex="0">
+          Alondra, inscrite en mars 2026.
+        </div>
+        <div
+          class="panneau"
+          role="tabpanel"
+          id="panneau-activite"
+          aria-labelledby="onglet-activite"
+          tabindex="0"
+          hidden
+        >
+          Douze ateliers suivis.
+        </div>
+        <div
+          class="panneau"
+          role="tabpanel"
+          id="panneau-reglages"
+          aria-labelledby="onglet-reglages"
+          tabindex="0"
+          hidden
+        >
+          <p>Préférences de notification.</p>
+
+          <!-- role=switch sur un <button> : Espace et Entrée fonctionnent déjà.
+               Le libellé reste STABLE, c'est aria-checked qui porte l'état.
+               Module 17 § 3.2. -->
+          <button type="button" role="switch" aria-checked="false" id="interrupteur" class="interrupteur">
+            <span class="piste" aria-hidden="true"><span class="pouce"></span></span>
+            <span class="libelle" id="libelle-interrupteur">Notifications par courriel</span>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

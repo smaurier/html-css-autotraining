@@ -1,0 +1,38 @@
+/* STARTER. Le menu et la modale sont dessinés à la main, avec des z-index. */
+
+body { font-family: system-ui, sans-serif; margin: 0; }
+.entete { padding: 1rem; border-block-end: 1px solid #c8c8c8; }
+.contenu { padding: 1rem; max-inline-size: 45rem; }
+
+.bouton { font: inherit; padding: 0.5rem 0.9rem; border: 1px solid #888; border-radius: 0.4rem; background: white; }
+.bouton-danger { border-color: #a11; color: #a11; }
+
+.menu {
+  display: none;
+  position: absolute;
+  z-index: 50;
+  margin-block-start: 0.25rem;
+  background: white;
+  border: 1px solid #c8c8c8;
+  border-radius: 0.4rem;
+  padding: 0.5rem;
+}
+.menu.ouvert { display: grid; gap: 0.25rem; }
+
+.fausse-modale {
+  display: none;
+  position: fixed;
+  inset-block-start: 20%;
+  inset-inline-start: 50%;
+  translate: -50% 0;
+  z-index: 100;
+  background: white;
+  border: 1px solid #c8c8c8;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  max-inline-size: 28rem;
+}
+.fausse-modale.ouverte { display: block; }
+.actions { display: flex; gap: 0.5rem; justify-content: flex-end; margin-block-start: 1rem; }
+
+:focus-visible { outline: 2px solid rgb(11, 95, 255); outline-offset: 2px; }

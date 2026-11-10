@@ -1,0 +1,54 @@
+/* SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN. */
+
+body { font-family: system-ui, sans-serif; margin: 0; }
+.contenu { padding: 1rem; max-inline-size: 45rem; }
+
+.carte {
+  border: 1px solid #c8c8c8;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  margin-block: 1rem;
+
+  /* Bug 1 : un ancêtre positionné, donc le badge a un containing block local.
+     Module 04 § 2 : absolute se cale sur le plus proche ancêtre POSITIONNÉ. */
+  position: relative;
+
+  /* Bug 2 : l'opacity de 0.99 est retirée. Elle ne servait à rien visuellement et
+     créait un contexte d'empilement qui enfermait le panneau. Module 04 § 4.1. */
+}
+
+.badge {
+  position: absolute;
+  inset-block-start: 0.5rem;
+  inset-inline-end: 0.5rem;
+  background: rgb(11, 95, 255);
+  color: rgb(255, 255, 255);
+  border-radius: 1rem;
+  padding: 0.1rem 0.5rem;
+}
+
+.panneau {
+  position: relative;
+  /* 3 suffit : il est comparé au même niveau que .carte-suivante, qui vaut 2.
+     Plus besoin de 9999, qui ne servait à rien puisqu'il était comparé ailleurs. */
+  z-index: 3;
+  background: rgb(255, 245, 200);
+  border: 1px solid #d0c070;
+  padding: 0.5rem;
+  margin-block-start: 2rem;
+  margin-block-end: -3rem;
+}
+
+.carte-suivante { position: relative; z-index: 2; background: rgb(255, 255, 255); }
+
+/* Bug 3 : un contexte de formatage de bloc, sans couper quoi que ce soit.
+   display: flow-root n'existe que pour ça. overflow: hidden aurait coupé les halos
+   de focus, donc mis 10.7 (A) en danger. Module 04 § 3.2. */
+.bloc { background: #f4f4f4; display: flow-root; }
+.interne { margin-block: 2rem; }
+
+/* Bug 4 : plus aucun `order`. L'ordre visuel EST l'ordre du DOM. */
+.actions { display: flex; gap: 0.5rem; }
+
+button { font: inherit; padding: 0.5rem 0.9rem; }
+:focus-visible { outline: 2px solid rgb(11, 95, 255); outline-offset: 2px; }

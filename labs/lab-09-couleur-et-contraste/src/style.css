@@ -1,0 +1,30 @@
+/* STARTER. Quatre défauts :
+   1. le texte secondaire est trop clair,
+   2. la bordure du champ est trop claire,
+   3. l'état des ateliers n'est porté que par la couleur des pastilles,
+   4. aucun color-scheme : les contrôles natifs resteront clairs en thème sombre. */
+
+body { font-family: system-ui, sans-serif; margin: 0; background: #ffffff; color: #222222; }
+.contenu { padding: 1rem; max-inline-size: 45rem; }
+
+/* 1. Gris trop clair sur blanc. */
+.secondaire { color: #9a9a9a; }
+
+.avertissement { color: #8a6d00; }
+
+.liste { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.ligne { display: flex; gap: 0.5rem; align-items: center; }
+
+/* 3. La couleur seule dit si l'atelier va bien ou non. */
+.pastille { inline-size: 0.8rem; block-size: 0.8rem; border-radius: 50%; }
+.pastille-ok { background: #2e7d32; }
+.pastille-ko { background: #c62828; }
+
+.formulaire { margin-block-start: 1.5rem; display: grid; gap: 0.4rem; max-inline-size: 22rem; }
+
+/* 2. Bordure quasi invisible. */
+input { font: inherit; padding: 0.4rem; border: 1px solid #e2e2e2; border-radius: 0.3rem; }
+
+.bouton { font: inherit; padding: 0.5rem 0.9rem; border: none; border-radius: 0.4rem; background: #6aa9ff; color: #ffffff; }
+
+:focus-visible { outline: 2px solid #0b5fff; outline-offset: 2px; }

@@ -1,0 +1,50 @@
+/* STARTER. Trois bugs de contexte, plus une marge mal contenue.
+   Le rendu paraît presque juste : c'est la géométrie et l'ordre qui sont faux. */
+
+body { font-family: system-ui, sans-serif; margin: 0; }
+.contenu { padding: 1rem; max-inline-size: 45rem; }
+
+.carte {
+  border: 1px solid #c8c8c8;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  margin-block: 1rem;
+  /* Posé pour un fondu, et il crée un contexte d'empilement sans qu'on le veuille. */
+  opacity: 0.99;
+}
+
+/* Bug 1 : aucun ancêtre positionné, donc ce badge se cale sur le viewport. */
+.badge {
+  position: absolute;
+  inset-block-start: 0.5rem;
+  inset-inline-end: 0.5rem;
+  background: rgb(11, 95, 255);
+  color: white;
+  border-radius: 1rem;
+  padding: 0.1rem 0.5rem;
+}
+
+/* Bug 2 : le z-index est comparé DANS le contexte de .carte, pas avec le monde extérieur. */
+.panneau {
+  position: relative;
+  z-index: 9999;
+  background: rgb(255, 245, 200);
+  border: 1px solid #d0c070;
+  padding: 0.5rem;
+  margin-block-start: 2rem;
+  margin-block-end: -3rem;
+}
+
+.carte-suivante { position: relative; z-index: 2; background: white; }
+
+/* Bug 3 : la marge du premier enfant sort du bloc. overflow: hidden la contient,
+   mais il coupe aussi les halos de focus. */
+.bloc { background: #f4f4f4; overflow: hidden; }
+.interne { margin-block: 2rem; }
+
+/* Bug 4 : l'ordre visuel ne correspond plus à l'ordre du DOM. */
+.actions { display: flex; gap: 0.5rem; }
+.valider { order: -1; }
+
+button { font: inherit; padding: 0.5rem 0.9rem; }
+:focus-visible { outline: 2px solid rgb(11, 95, 255); outline-offset: 2px; }

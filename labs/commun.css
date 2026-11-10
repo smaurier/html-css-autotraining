@@ -1,0 +1,118 @@
+/* Styles communs aux labs. Volontairement minimal : ce cours n'évalue pas l'esthétique.
+   Les deux classes utilitaires ci-dessous sont en revanche de la matière du cours. */
+
+:root {
+  color-scheme: light dark;
+  --trait: light-dark(#c8c8c8, #4a4a4a);
+  --focus: light-dark(#0b5fff, #8ab4ff);
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Masquage VISUEL : le texte reste dans le DOM et dans l'arbre d'accessibilité.
+   Ne jamais remplacer par display: none, qui le retirerait des deux. Module 01 § 1.4. */
+.visuellement-masque {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* 12.7 (A) : hors écran, mais visible dès qu'il prend le focus. */
+.acces-rapide {
+  position: absolute;
+  inset-block-start: -3rem;
+  inset-inline-start: 0.5rem;
+  z-index: 10;
+  padding: 0.5rem 0.75rem;
+  background: Canvas;
+  color: CanvasText;
+  border: 2px solid var(--focus);
+  transition: inset-block-start 150ms;
+}
+.acces-rapide:focus-visible {
+  inset-block-start: 0.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .acces-rapide {
+    transition: none;
+  }
+}
+
+/* 10.7 (A) : un indicateur de focus visible, partout. */
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.entete {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  border-block-end: 1px solid var(--trait);
+}
+
+.marque {
+  margin: 0;
+  font-weight: 700;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.nav ul,
+.pied ul,
+.liens-aide {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav,
+.pied .liens {
+  display: flex;
+  gap: 1rem;
+}
+
+.contenu {
+  padding: 1rem;
+  max-inline-size: 45rem;
+}
+
+.pied {
+  padding: 1rem;
+  border-block-start: 1px solid var(--trait);
+}
+
+.titre {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.sous-titre {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-block-start: 1.5rem;
+}
+
+img {
+  max-inline-size: 100%;
+}
+
+.marque img,
+.icone img {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+}

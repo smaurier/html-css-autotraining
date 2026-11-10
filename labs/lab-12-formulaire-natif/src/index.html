@@ -1,0 +1,31 @@
+<!doctype html>
+<!-- STARTER. Le formulaire est beau, court, et non conforme sur sept points. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inscription | TribuZen</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="contenu">
+      <h1>Inscription à l'atelier</h1>
+
+      <form id="formulaire" class="formulaire" novalidate>
+        <input id="courriel" name="courriel" type="email" placeholder="Courriel" required />
+
+        <input id="cp" name="cp" type="text" placeholder="Code postal" pattern="[0-9]{5}" required />
+
+        <div class="groupe">
+          <p class="faux-titre">Mode de contact</p>
+          <label><input type="radio" name="contact" value="courriel" required /> Courriel</label>
+          <label><input type="radio" name="contact" value="tel" /> Téléphone</label>
+        </div>
+
+        <button type="submit" class="bouton">Envoyer</button>
+      </form>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

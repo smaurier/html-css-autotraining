@@ -1,0 +1,84 @@
+<!doctype html>
+<!-- SOLUTION DE RÉFÉRENCE. À n'ouvrir qu'après ton GREEN. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 8.5 (A) : un titre qui situe la page ET le site -->
+    <title>Membres | TribuZen</title>
+    <link rel="stylesheet" href="../../commun.css" />
+  </head>
+  <body>
+    <!-- 12.7 (A) : premier élément focusable de la page, visible à la prise de focus -->
+    <a href="#contenu" class="acces-rapide">Aller au contenu</a>
+
+    <!-- 9.2 (A) et 12.6 (A) : role=banner implicite, unique dans la page -->
+    <header class="entete">
+      <p class="marque">
+        <!-- Le logo porte le nom du site, qui est déjà écrit à côté : il est donc décoratif.
+             1.2 (A) : alt vide, et il sort de l'arbre. -->
+        <img src="../../logo.svg" alt="" />
+        TribuZen
+      </p>
+
+      <!-- 12.6 (A) : nommée, car une page peut contenir plusieurs navigations -->
+      <nav class="nav" aria-label="Navigation principale">
+        <!-- 9.3 (A) : toute suite de liens est une liste. Le lecteur annonce « 5 éléments ». -->
+        <ul>
+          <li><a href="/membres" aria-current="page">Membres</a></li>
+          <li><a href="/ateliers">Ateliers</a></li>
+          <li><a href="/agenda">Agenda</a></li>
+          <!-- Le lien était focusable ET aria-hidden : le focus arrivait sur un trou. -->
+          <li><a href="/profil">Profil</a></li>
+          <!-- 6.2 (A) : un lien icône a besoin d'un intitulé. L'image est décorative,
+               le nom accessible vient du texte masqué visuellement. -->
+          <li>
+            <a href="/recherche" class="icone">
+              <img src="../../loupe.svg" alt="" />
+              <span class="visuellement-masque">Rechercher</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 9.2 (A) et 12.6 (A) : main unique, cible du lien d'accès rapide -->
+    <main class="contenu" id="contenu">
+      <!-- 9.1 (A) : la hiérarchie dit la structure, elle n'est pas choisie pour sa taille -->
+      <h1>Membres</h1>
+
+      <!-- 1.2 (A) : purement décoratif, donc retiré de l'arbre -->
+      <img src="../../separateur.svg" alt="" />
+
+      <h2>Famille Maurier</h2>
+      <p>Quatre personnes, dont deux mineures.</p>
+
+      <h2>Invitations en attente</h2>
+      <p>Aucune invitation pour le moment.</p>
+
+      <h2>Aide</h2>
+      <ul class="liens-aide">
+        <!-- 6.1 (A) : « En savoir plus » répété n'est pas explicite hors contexte.
+             Le nom accessible dit la destination, le texte visible reste court. -->
+        <li>
+          <a href="/aide/membres">
+            En savoir plus<span class="visuellement-masque"> sur la gestion des membres</span>
+          </a>
+        </li>
+        <li>
+          <a href="/aide/invitations">
+            En savoir plus<span class="visuellement-masque"> sur les invitations</span>
+          </a>
+        </li>
+      </ul>
+    </main>
+
+    <!-- 9.2 (A) : role=contentinfo implicite, unique -->
+    <footer class="pied">
+      <ul>
+        <li><a href="/mentions">Mentions légales</a></li>
+        <li><a href="/accessibilite">Déclaration d'accessibilité</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
