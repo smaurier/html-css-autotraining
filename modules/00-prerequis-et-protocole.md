@@ -70,6 +70,51 @@ Donc ici : pas de chapitre final, pas d'encadré « pensez aussi à l'accessibil
 vivent dans le module du geste, et l'oracle du lab les vérifie. **Un lab ne passe pas au vert si
 son accessibilité est reportée à plus tard.**
 
+## 4 bis. Le référentiel en bref
+
+Ce cours cite des critères par leur numéro dès le module 01. Trois choses à savoir avant, et
+elles tiennent en une page.
+
+### Qui dit quoi
+
+**WCAG** est le socle technique international. **RGAA** en est l'application française :
+même socle, traduit, avec une méthodologie de test critère par critère et une portée
+opposable. L'**European Accessibility Act** rend l'accessibilité obligatoire pour des services
+numériques privés depuis juin 2025.
+
+La cible légale est le niveau **AA**. Ce cours ne traite pas le droit : il est dans le cours 23
+`23-droit-numerique`. Ici, on code.
+
+### Les quatre principes, et pourquoi ils servent
+
+Tout critère appartient à l'un des quatre, et l'acronyme fonctionne en français comme en
+anglais : **POUR**.
+
+| Principe | Ce qu'il exige | Où ça se joue dans ce cours |
+|---|---|---|
+| **P**erceptible | l'information atteint tous les sens | alternatives (module 01), contraste et couleur (module 10) |
+| **O**pérable, ou **U**tilisable | tout est actionnable, notamment au clavier | focus et clavier (modules 09, 16, 17), mouvement (module 12) |
+| **U**nderstandable, ou **C**ompréhensible | contenu et interface prévisibles | structure et langue (module 01), formulaires (module 14) |
+| **R**obuste | compatible avec les technologies d'assistance | sémantique (module 01), web components (module 18) |
+
+L'utilité pratique du classement : devant un bug d'accessibilité, il dit **quel genre** de
+problème on a. Un contraste insuffisant est un problème de perception, donc aucun `aria-*` ne
+le réglera. Un composant inatteignable au clavier est un problème d'opérabilité, donc ajouter
+un rôle ne suffira pas. C'est la même logique que la règle du module 01 : ARIA n'ajoute aucun
+comportement.
+
+### Les trois niveaux
+
+| Niveau | Portée |
+|---|---|
+| **A** | le minimum vital |
+| **AA** | la cible légale, et donc la cible de ce cours |
+| **AAA** | l'excellence, pas exigée globalement |
+
+Chaque critère cité dans ce cours porte son niveau, `(A)` ou `(AA)`, et la citation sans niveau
+est considérée comme un défaut de rédaction : l'outil `outils/criteres.mjs` ne compte que les
+citations niveautées, précisément pour que l'oubli se voie.
+
 ## 5. Les trois familles d'oracles
 
 | Ce qu'on prouve | Outil | Limite assumée |

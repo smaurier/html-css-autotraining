@@ -3,6 +3,15 @@
 > Relevé du 09/11/2026 sur les 24 cours du curriculum, hors `node_modules`.
 > Commandes de relevé conservées en fin de fichier : tout chiffre ici est rejouable.
 >
+> ⚠️ **Correction du 10/11/2026 : les chiffres de ce tableau comptent l'archive.** Chaque cours
+> exclut du build ses dossiers `cours/`, `exercices/` et `quizzes/`, conservés comme source
+> d'audit. Le relevé ci-dessous ne les a pas exclus, il surestime donc le périmètre. Sur le
+> contenu vivant seulement, le total était de **91 fichiers et 436 lignes**, et non de 132 et
+> 619. Détail, verdicts corrigés et rapport d'exécution dans `degraissage-a-faire.md`.
+>
+> La leçon vaut pour tout relevé futur : **compter des occurrences n'est pas lire**, et un
+> `grep` qui ignore le `srcExclude` d'un site de documentation mesure de l'archive.
+>
 > **Raison d'être :** trois façons d'oublier quelque chose. Un item d'enquête non couvert
 > (traité par `couverture-state-of.md`), un critère RGAA couvert par aucun module (traité par
 > `couverture-rgaa.md`), et une notion déjà bien traitée ailleurs qu'on réécrirait pour rien.
@@ -26,7 +35,7 @@ cours, elle reste. `à écrire` : personne ne l'enseigne, c'est un trou réel.
 | `subgrid` | nulle part | **à écrire** |
 | Custom properties | 8 `13-architecture`, 6 `21-design-system`, 4 `24-design-craft`, 4 `02-vue` | **à garder** côté architecture (pipeline de tokens) et **à écrire** côté mécanisme : `@property`, cycle de substitution, valeur invalide à l'utilisation, rien de tout ça n'est traité |
 | `grid-template` | 7 `02-vue`, 6 `03-angular`, 3 `21-design-system` | **à écrire**. Vérification faite : ce sont des `style=` en ligne dans des exemples de documentation framework, pas un enseignement de Grid. Rien à dégraisser, tout à écrire |
-| OKLCH, `color-mix` | 8 `13-architecture`, 3 `21-design-system` | **à garder**. Vérification faite : `13-architecture/cours/05-architecture-frontend/05-design-tokens-systems.md` enseigne réellement OKLCH pour la génération de palettes. Le 25 module 10 traite la perception, les gamuts et le contraste, et renvoie à l'architecture pour le pipeline de tokens. Renvoi réciproque à poser |
+| OKLCH, `color-mix` | 8 `13-architecture`, 3 `21-design-system` | ⚠️ **verdict corrigé le 10/11/2026.** Les huit fichiers de `13-architecture` sont tous dans `cours/`, qui est une **archive exclue du build** par son `srcExclude`. Son dossier `modules/`, le contenu vivant, ne mentionne ni OKLCH ni l'accessibilité. La notion n'y est donc plus enseignée : le cours 25 module 10 en est le seul propriétaire vivant, et le renvoi réciproque prévu n'a plus d'objet |
 | Shadow DOM | 4 `13-architecture` | **à garder** (angle architecture, micro-frontends) et **à écrire** côté pratique : portée du style, slots, `ElementInternals`, effet sur l'arbre d'accessibilité |
 | `<dialog>` | Vérification faite : 7 fichiers citent `<dialog>` natif, 9 citent `MatDialog`, `DialogService` ou `useDialog` | **mixte**. Les composants de librairie restent dans leur cours. L'élément natif, le top layer et le piège de focus vont au 25 module 09 |
 | `popover` | 2 `25-html-css`, 1 chacun dans `24-design-craft`, `21-design-system`, `13-architecture`, `04-react` | **à écrire** |
